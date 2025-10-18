@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOCK-IN | Dashboard</title>
+  <link rel="stylesheet" href="styles1.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  
+</head>
+<body>
+  
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-success" href="#">LOCK-IN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="institute.html">Cyber Institute</a></li>
+          <li class="nav-item"><a class="nav-link" href="games.html">Game Room</a></li>
+          <li class="nav-item"><a class="nav-link" href="directory.html">Info Vault</a></li>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+          <h1 class="fw-bold text-light">Cyber Institute</h1>
+          <p class="lead">Master the basics of cybersecurity through our interactive courses.</p>
+          <a href="institute.html" class="btn-custom">Start Learning</a>
+        </div>
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+          <h1 class="fw-bold text-light">Game Room</h1>
+          <p class="lead">Boost your cyber skills with fun awareness games.</p>
+          <a href="games.html" class="btn-custom">Play Now</a>
+        </div>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+          <h1 class="fw-bold text-light">Info Vault</h1>
+          <p class="lead">Find trusted cyber helplines, organizations, and secure tools.</p>
+          <a href="directory.html" class="btn-custom">Explore Directory</a>
+        </div>
+      </div>
+    
+    </div>
+    
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-light mb-3">Why Choose LOCK-IN?</h2>
+        <p class="text-light lead">Your complete cybersecurity awareness platform</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Feature 1 -->
+        <div class="col-md-4">
+          <div class="feature-box p-4 h-100">
+            <div class="feature-icon mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#00fffb" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+              </svg>
+            </div>
+            <h3 class="h4 fw-bold text-light mb-3">Interactive Learning</h3>
+            <p class="text-light">Engage with comprehensive cybersecurity courses designed for all skill levels. Learn at your own pace with hands-on modules and real-world scenarios.</p>
+          </div>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="col-md-4">
+          <div class="feature-box p-4 h-100">
+            <div class="feature-icon mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#7e03aa" viewBox="0 0 16 16">
+                <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z"/>
+                <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z"/>
+              </svg>
+            </div>
+            <h3 class="h4 fw-bold text-light mb-3">Gamified Experience</h3>
+            <p class="text-light">Test your knowledge through engaging games and challenges. Make learning fun while strengthening your cybersecurity awareness and skills.</p>
+          </div>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="col-md-4">
+          <div class="feature-box p-4 h-100">
+            <div class="feature-icon mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#ffae00" viewBox="0 0 16 16">
+                <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+                <path d="M8.646 6.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 9 8.646 7.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 9l1.647-1.646a.5.5 0 0 0 0-.708z"/>
+              </svg>
+            </div>
+            <h3 class="h4 fw-bold text-light mb-3">Resource Directory</h3>
+            <p class="text-light">Access a curated collection of cybersecurity tools, helplines, and trusted organizations. Everything you need to stay safe online in one place.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Additional Features Row -->
+      <div class="row g-4 mt-4">
+        <!-- Feature 4 -->
+        <div class="col-md-4">
+          <div class="feature-box p-4 h-100">
+            <div class="feature-icon mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#00ff88" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+              </svg>
+            </div>
+            <h3 class="h4 fw-bold text-light mb-3">Security First</h3>
+            <p class="text-light">Learn industry-standard security practices and protocols. Build a strong foundation in protecting yourself and your organization from cyber threats.</p>
+          </div>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="col-md-4">
+          <div class="feature-box p-4 h-100">
+            <div class="feature-icon mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#ff00ff" viewBox="0 0 16 16">
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                <path d="M4.268 3.636a.5.5 0 0 1 .7-.128l.895.447.895-.447a.5.5 0 1 1 .448.894l-.447.224.447.224a.5.5 0 1 1-.448.894l-.895-.447-.895.447a.5.5 0 1 1-.448-.894l.447-.224-.447-.224a.5.5 0 0 1-.128-.7z"/>
+              </svg>
+            </div>
+            <h3 class="h4 fw-bold text-light mb-3">Always Updated</h3>
+            <p class="text-light">Stay current with the latest cybersecurity threats and best practices. Our content is regularly updated to reflect the evolving digital landscape.</p>
+          </div>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="col-md-4">
+          <div class="feature-box p-4 h-100">
+            <div class="feature-icon mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#00d4ff" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+              </svg>
+            </div>
+            <h3 class="h4 fw-bold text-light mb-3">Community Support</h3>
+            <p class="text-light">Join a community of learners and cybersecurity enthusiasts. Share knowledge, ask questions, and grow together in a supportive environment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
