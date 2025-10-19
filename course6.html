@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOCK-IN | Safe Internet Navigation</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">LOCK-IN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="courses.html">Cyber Institute</a></li>
+          <li class="nav-item"><a class="nav-link" href="games.html">Game Room</a></li>
+          <li class="nav-item"><a class="nav-link" href="directory.html">Info Vault</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Course Header -->
+  <section class="container-fluid py-4">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="fw-bold">Safe Internet Navigation & Security Tools</h1>
+          <p class="lead mb-0">Master secure browsing and learn essential tools to protect yourself online</p>
+        </div>
+        <div>
+          <a href="courses.html" class="btn-custom"><span>← Back to Hub</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Bar -->
+  <section class="container-fluid py-3">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3">
+        <span class="text-light fw-bold">Progress:</span>
+        <div class="progress flex-grow-1" style="height: 25px;">
+          <div class="progress-bar" id="courseProgress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
+        <span class="text-light fw-bold" id="progressText">0/8</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Course Container -->
+  <div class="container my-5">
+    <div class="row">
+      
+      <!-- Sidebar - Chapter Navigation -->
+      <div class="col-lg-3 mb-4">
+        <div class="card-cyber p-3">
+          <h5 class="mb-3">Course Chapters</h5>
+          <div class="chapter-list">
+            
+            <!-- Chapter 1 -->
+            <div class="chapter-item active" data-chapter="1">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">▶</span>
+                <span class="chapter-title">Safe Browsing Basics</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 2 -->
+            <div class="chapter-item locked" data-chapter="2">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Knowledge Check: Browsing</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 3 -->
+            <div class="chapter-item locked" data-chapter="3">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Security Tools Overview</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 4 -->
+            <div class="chapter-item locked" data-chapter="4">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Knowledge Check: Tools</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 5 -->
+            <div class="chapter-item locked" data-chapter="5">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Digital Hygiene Practices</span>
+              </div>
+            </div>
+
+            <!-- Chapter 6 -->
+            <div class="chapter-item locked" data-chapter="6">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Knowledge Check: Hygiene</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 7 -->
+            <div class="chapter-item locked" data-chapter="7">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Threat Recognition</span>
+              </div>
+            </div>
+
+            <!-- Chapter 8 -->
+            <div class="chapter-item locked" data-chapter="8">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Final Assessment</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="col-lg-9">
+        
+        <!-- Chapter Content Container -->
+        <div id="chapterContent" class="card-cyber p-4">
+          
+          <!-- CHAPTER 1: Safe Browsing Basics (Lesson) -->
+          <div class="chapter-content" id="chapter-1">
+            <h2 class="mb-4">Chapter 1: Safe Browsing Basics</h2>
+            
+            <div class="lesson-content">
+              <h4>Understanding Safe Internet Navigation</h4>
+              <p>The internet is a vast resource, but it also contains risks. Learning safe browsing habits is the foundation of protecting yourself online. Safe browsing means being aware of threats, using appropriate tools, and making smart decisions about where you go and what you click.</p>
+              
+              <h4 class="mt-4">Choosing the Right Browser</h4>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🌐 Modern Browsers:</strong> Use up-to-date browsers like Chrome, Firefox, Brave, or Safari. These browsers receive regular security updates that patch vulnerabilities. Avoid outdated browsers that no longer receive security updates.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🔄 Keep Software Updated:</strong> Always update your browser as soon as updates are available. Updates fix security holes that hackers can exploit. Enable automatic updates if possible.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🕵️ Incognito/Private Mode:</strong> Use private browsing mode on shared computers. This prevents your browsing history, cookies, and data from being saved. Useful when using public computers or school devices.
+              </div>
+              
+              <h4 class="mt-4">Recognizing Dangerous Links</h4>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>Never Click On:</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Links promising "Free Money" or "You've Won!"</li>
+                  <li>Pop-ups claiming you have a virus or prize</li>
+                  <li>Links from unknown senders in emails or messages</li>
+                  <li>Shortened URLs you don't recognize (bit.ly, tinyurl, etc.)</li>
+                  <li>Links with suspicious characters or misspelled words in the URL</li>
+                  <li>Ads that seem too good to be true</li>
+                </ul>
+              </div>
+              
+              <h4 class="mt-4">Safe Browsing Practices</h4>
+              <ul>
+                <li>Hover over links before clicking to see where they lead</li>
+                <li>Look for the padlock icon and "https://" before entering information</li>
+                <li>Close unexpected pop-ups by clicking the X, never the ad</li>
+                <li>Don't download files from untrusted sources</li>
+                <li>Be skeptical of ads that pop up or appear on websites</li>
+                <li>Check URLs carefully - scammers often use similar-looking domains</li>
+                <li>When in doubt, go directly to the website by typing the URL yourself</li>
+              </ul>
+              
+              <h4 class="mt-4">Browser Security Features</h4>
+              <ul>
+                <li><strong>Phishing Protection:</strong> Most browsers warn you about known phishing sites</li>
+                <li><strong>Malware Detection:</strong> Browsers scan downloads for malware</li>
+                <li><strong>Safe Browsing:</strong> Browser checks sites against lists of unsafe websites</li>
+                <li><strong>Sandbox Technology:</strong> Isolates websites so they can't access your system</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-end mt-4">
+              <button class="btn-custom next-chapter" data-next="2"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 2: Knowledge Check (Exercise) -->
+          <div class="chapter-content" id="chapter-2" style="display: none;">
+            <h2 class="mb-4">Chapter 2: Knowledge Check - Safe Browsing</h2>
+            
+            <div class="exercise-content">
+              <h4>Test Your Understanding</h4>
+              <p>Let's review what you've learned about safe browsing.</p>
+              
+              <form id="quiz-chapter-2" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. Why is it important to keep your browser updated?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_a" value="a">
+                    <label class="form-check-label" for="q2_1_a">It makes your internet faster</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_b" value="b">
+                    <label class="form-check-label" for="q2_1_b">Updates fix security vulnerabilities that hackers can exploit</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_c" value="c">
+                    <label class="form-check-label" for="q2_1_c">It's not really important</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. What should you do before clicking an unknown link?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_a" value="a">
+                    <label class="form-check-label" for="q2_2_a">Click it immediately</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_b" value="b">
+                    <label class="form-check-label" for="q2_2_b">Hover over it to see where it leads, or ask someone first</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_c" value="c">
+                    <label class="form-check-label" for="q2_2_c">Check your browser history</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. When should you use private browsing mode?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_a" value="a">
+                    <label class="form-check-label" for="q2_3_a">Never, it's not useful</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_b" value="b">
+                    <label class="form-check-label" for="q2_3_b">When using shared computers to prevent saving browsing history</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_c" value="c">
+                    <label class="form-check-label" for="q2_3_c">Only when visiting dangerous websites</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-2" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="1"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 3: Security Tools Overview (Lesson) -->
+          <div class="chapter-content" id="chapter-3" style="display: none;">
+            <h2 class="mb-4">Chapter 3: Security Tools Overview</h2>
+            
+            <div class="lesson-content">
+              <h4>Essential Tools for Internet Protection</h4>
+              <p>Beyond safe browsing habits, several security tools can significantly enhance your protection online. Understanding what each tool does helps you choose the right ones for your needs.</p>
+              
+              <h5 class="mt-4">🔐 VPN (Virtual Private Network)</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>What it does:</strong> A VPN encrypts your internet connection and hides your IP address from websites and your internet service provider. Your data travels through a secure tunnel, making it harder for hackers to intercept.
+                <p class="mt-2 mb-0"><strong>When to use:</strong> Public Wi-Fi networks, shared networks, or when you want additional privacy. Not necessary for every browsing session at home on private Wi-Fi.</p>
+              </div>
+              
+              <h5 class="mt-4">🔑 Password Manager</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>What it does:</strong> Stores your passwords securely and can generate strong, unique passwords for each account. Examples: LastPass, 1Password, Bitwarden.
+                <p class="mt-2 mb-0"><strong>Benefits:</strong> You only need to remember one master password. Reduces risk of password reuse. Generates complex passwords that are harder to crack.</p>
+              </div>
+              
+              <h5 class="mt-4">📵 Ad Blockers</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>What it does:</strong> Blocks advertisements and tracking pixels from websites. Examples: uBlock Origin, Adblock Plus, Privacy Badger.
+                <p class="mt-2 mb-0"><strong>Benefits:</strong> Reduces exposure to malicious ads. Prevents third-party trackers. Makes browsing faster. Protects your privacy.</p>
+              </div>
+              
+              <h5 class="mt-4">🛡️ Antivirus Software</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>What it does:</strong> Scans your computer for malware, viruses, and other threats. Examples: Windows Defender (built-in), Avast, Norton, McAfee.
+                <p class="mt-2 mb-0"><strong>Note:</strong> Most modern computers come with built-in protection. Additional antivirus is optional but can provide extra layers of security.</p>
+              </div>
+              
+              <h5 class="mt-4">🚨 Malware Protection</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>What it does:</strong> Detects and removes malicious software like spyware and ransomware. Often included with antivirus software.
+                <p class="mt-2 mb-0"><strong>Important:</strong> Don't download malware removal tools from untrusted sources - they may contain malware themselves.</p>
+              </div>
+              
+              <h4 class="mt-4">Browser Extensions for Security</h4>
+              <ul>
+                <li><strong>HTTPS Everywhere:</strong> Forces websites to use encrypted connections when available</li>
+                <li><strong>Privacy Badger:</strong> Blocks third-party trackers automatically</li>
+                <li><strong>uBlock Origin:</strong> Removes ads and blocking scripts (different from regular ad blockers)</li>
+                <li><strong>DuckDuckGo Privacy Essentials:</strong> Provides privacy grades for websites</li>
+              </ul>
+              
+              <h4 class="mt-4">Free vs Paid Tools</h4>
+              <p>Many excellent security tools are available for free. You don't need to pay for basic protection:</p>
+              <ul>
+                <li>Windows Defender is free and effective on Windows</li>
+                <li>Many VPNs offer free versions (though limited)</li>
+                <li>Ad blockers like uBlock Origin are free</li>
+                <li>Some password managers have free tiers</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="2"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="4"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 4: Knowledge Check - Tools (Exercise) -->
+          <div class="chapter-content" id="chapter-4" style="display: none;">
+            <h2 class="mb-4">Chapter 4: Knowledge Check - Security Tools</h2>
+            
+            <div class="exercise-content">
+              <h4>Test Your Tool Knowledge</h4>
+              <p>Let's see how well you understand security tools.</p>
+              
+              <form id="quiz-chapter-4" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. What is a VPN primarily used for?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_1" id="q4_1_a" value="a">
+                    <label class="form-check-label" for="q4_1_a">Making your internet faster</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_1" id="q4_1_b" value="b">
+                    <label class="form-check-label" for="q4_1_b">Encrypting your connection and hiding your IP address</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_1" id="q4_1_c" value="c">
+                    <label class="form-check-label" for="q4_1_c">Blocking all websites</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. Which tool stores and manages your passwords?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_2" id="q4_2_a" value="a">
+                    <label class="form-check-label" for="q4_2_a">Ad Blocker</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_2" id="q4_2_b" value="b">
+                    <label class="form-check-label" for="q4_2_b">Password Manager</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_2" id="q4_2_c" value="c">
+                    <label class="form-check-label" for="q4_2_c">VPN</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. What do ad blockers help prevent?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_3" id="q4_3_a" value="a">
+                    <label class="form-check-label" for="q4_3_a">Malware and viruses only</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_3" id="q4_3_b" value="b">
+                    <label class="form-check-label" for="q4_3_b">Malicious ads and third-party trackers</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_3" id="q4_3_c" value="c">
+                    <label class="form-check-label" for="q4_3_c">Your computer from being stolen</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-4" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="3"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 5: Digital Hygiene Practices (Lesson) -->
+          <div class="chapter-content" id="chapter-5" style="display: none;">
+            <h2 class="mb-4">Chapter 5: Digital Hygiene Practices</h2>
+            
+            <div class="lesson-content">
+              <h4>What is Digital Hygiene?</h4>
+              <p>Digital hygiene refers to practices that maintain the health and security of your devices and online accounts. Just as physical hygiene keeps you healthy, digital hygiene keeps your devices safe and your data protected.</p>
+              
+              <h4 class="mt-4">Regular Maintenance Tasks</h4>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🗑️ Clear Your Browser Cache and Cookies:</strong> Browser cache stores temporary files and cookies track your activity. Clearing them regularly improves privacy and can fix browsing issues.
+                <ul class="mt-2 mb-0">
+                  <li>In most browsers: Settings → Privacy → Clear browsing data</li>
+                  <li>Do this monthly or when you notice slowness</li>
+                </ul>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🔄 Update Software Regularly:</strong> Operating systems, browsers, apps, and plugins all receive security updates. Updates patch vulnerabilities before hackers can exploit them.
+                <ul class="mt-2 mb-0">
+                  <li>Enable automatic updates when possible</li>
+                  <li>Restart your computer after updates</li>
+                  <li>Don't ignore update notifications</li>
+                </ul>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🔐 Review Account Security:</strong> Periodically check your account security settings, connected apps, and recovery options.
+                <ul class="mt-2 mb-0">
+                  <li>Check which apps have access to your accounts</li>
+                  <li>Remove apps you no longer use</li>
+                  <li>Update recovery email and phone numbers</li>
+                </ul>
+              </div>
+              
+              <h4 class="mt-4">Password Hygiene</h4>
+              <ul>
+                <li>Change passwords for important accounts every 6-12 months</li>
+                <li>Use unique passwords for each account</li>
+                <li>Create strong passwords (12+ characters, mix of types)</li>
+                <li>Never write passwords down or share them</li>
+                <li>Don't use personal information in passwords</li>
+                <li>Avoid common words or patterns (12345, password, qwerty)</li>
+              </ul>
+              
+              <h4 class="mt-4">Device Maintenance</h4>
+              <ul>
+                <li>Restart your computer regularly (weekly or monthly)</li>
+                <li>Keep your hard drive from getting too full (delete unnecessary files)</li>
+                <li>Run disk cleanup periodically</li>
+                <li>Keep anti-malware software running and updated</li>
+                <li>Back up important files regularly</li>
+                <li>Use external hard drives or cloud storage for backups</li>
+              </ul>
+              
+              <h4 class="mt-4">Information Limits</h4>
+              <ul>
+                <li>Don't overshare personal information on public forums</li>
+                <li>Limit what you post on social media</li>
+                <li>Be careful with information in public places (coffee shops, libraries)</li>
+                <li>Don't leave devices unattended in public</li>
+                <li>Use privacy settings on social media</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="4"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="6"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 6: Knowledge Check - Hygiene (Exercise) -->
+          <div class="chapter-content" id="chapter-6" style="display: none;">
+            <h2 class="mb-4">Chapter 6: Knowledge Check - Digital Hygiene</h2>
+            
+            <div class="exercise-content">
+              <h4>Test Your Hygiene Knowledge</h4>
+              <p>Let's see how well you understand digital hygiene practices.</p>
+              
+              <form id="quiz-chapter-6" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. Why should you clear your browser cache and cookies?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_1" id="q6_1_a" value="a">
+                    <label class="form-check-label" for="q6_1_a">It makes your browser store more websites</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_1" id="q6_1_b" value="b">
+                    <label class="form-check-label" for="q6_1_b">To improve privacy and fix browsing issues</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_1" id="q6_1_c" value="c">
+                    <label class="form-check-label" for="q6_1_c">It's not necessary</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. How often should you update your software?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_2" id="q6_2_a" value="a">
+                    <label class="form-check-label" for="q6_2_a">Never, updates can break things</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_2" id="q6_2_b" value="b">
+                    <label class="form-check-label" for="q6_2_b">As soon as updates are available</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_2" id="q6_2_c" value="c">
+                    <label class="form-check-label" for="q6_2_c">Only when your computer crashes</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. What's a good practice for password management?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_3" id="q6_3_a" value="a">
+                    <label class="form-check-label" for="q6_3_a">Use the same password for all accounts</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_3" id="q6_3_b" value="b">
+                    <label class="form-check-label" for="q6_3_b">Use unique, strong passwords for each account</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_3" id="q6_3_c" value="c">
+                    <label class="form-check-label" for="q6_3_c">Write passwords down in a notebook</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-6" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="5"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 7: Threat Recognition (Lesson) -->
+          <div class="chapter-content" id="chapter-7" style="display: none;">
+            <h2 class="mb-4">Chapter 7: Threat Recognition</h2>
+            
+            <div class="lesson-content">
+              <h4>Identifying Online Threats</h4>
+              <p>The more you know about threats, the better you can recognize and avoid them. Most online threats rely on human error or lack of awareness. Learning to spot red flags can save you from falling victim.</p>
+              
+              <h4 class="mt-4">Common Online Threats</h4>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🎣 Phishing Attacks:</strong> Fake emails, messages, or websites designed to trick you into revealing sensitive information. They often impersonate legitimate companies or people.
+                <ul class="mt-2 mb-0">
+                  <li>Red flags: Urgent language, requests for passwords, suspicious links, poor spelling</li>
+                  <li>Solution: Don't click links in emails; go directly to the official website</li>
+                </ul>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🦠 Malware:</strong> Malicious software that infects your device. Includes viruses, spyware, ransomware, and trojans.
+                <ul class="mt-2 mb-0">
+                  <li>Red flags: Unexpected pop-ups, slow performance, programs opening themselves, strange error messages</li>
+                  <li>Solution: Install antivirus software and keep it updated</li>
+                </ul>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🚨 Pop-ups and Fake Alerts:</strong> Advertisements or warnings claiming you have a virus, won, a prize, or need to update software. Often malicious.
+                <ul class="mt-2 mb-0">
+                  <li>Red flags: Unsolicited alerts, too good to be true offers, pressure to act immediately</li>
+                  <li>Solution: Close them with the X button, never click on the ad or button</li>
+                </ul>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🕷️ Spyware:</strong> Software that secretly collects information about your activities without your knowledge.
+                <ul class="mt-2 mb-0">
+                  <li>Red flags: Slow computer, programs you didn't install, changed settings</li>
+                  <li>Solution: Use ad blockers, avoid downloading from untrusted sources</li>
+                </ul>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>💰 Scams:</strong> Schemes to trick you into sending money or information. Include advance-fee scams, lottery scams, romance scams.
+                <ul class="mt-2 mb-0">
+                  <li>Red flags: Requests for money upfront, too good to be true offers, emotional manipulation</li>
+                  <li>Solution: Be skeptical, verify information through official channels, don't send money to strangers</li>
+                </ul>
+              </div>
+              
+              <h4 class="mt-4">Suspicious Website Red Flags</h4>
+              <ul>
+                <li>Missing or inconsistent branding/logos</li>
+                <li>Poor grammar and spelling mistakes</li>
+                <li>Unusual or misspelled URLs</li>
+                <li>No privacy policy or contact information</li>
+                <li>Asking for unusual information upfront</li>
+                <li>No secure connection (no padlock/https)</li>
+                <li>Redirects or pop-ups to other sites</li>
+              </ul>
+              
+              <h4 class="mt-4">What To Do If You Encounter a Threat</h4>
+              <ul>
+                <li>Don't panic or act immediately</li>
+                <li>Don't click links or download files from suspicious sources</li>
+                <li>Close the window or browser tab</li>
+                <li>Run a scan with your antivirus software</li>
+                <li>Report the threat to the platform or website</li>
+                <li>Report to authorities if you've been scammed (IC3.gov, local police)</li>
+                <li>Tell a trusted adult or parent if you're unsure</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="6"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="8"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 8: Final Assessment -->
+          <div class="chapter-content" id="chapter-8" style="display: none;">
+            <h2 class="mb-4">Chapter 8: Final Assessment</h2>
+            
+            <div class="exercise-content">
+              <h4>Complete Your Course</h4>
+              <p>You've learned about safe internet navigation and security tools. Let's review everything!</p>
+              
+              <form id="quiz-chapter-8" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. What is the first thing you should check before entering payment information on a website?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_1" id="q8_1_a" value="a">
+                    <label class="form-check-label" for="q8_1_a">If it has a nice design</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_1" id="q8_1_b" value="b">
+                    <label class="form-check-label" for="q8_1_b">For https:// and a padlock icon</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_1" id="q8_1_c" value="c">
+                    <label class="form-check-label" for="q8_1_c">If other people are using it</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. Which of these is a sign of a phishing email?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_2" id="q8_2_a" value="a">
+                    <label class="form-check-label" for="q8_2_a">Requests for passwords or personal information</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_2" id="q8_2_b" value="b">
+                    <label class="form-check-label" for="q8_2_b">Friendly greeting and professional tone</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_2" id="q8_2_c" value="c">
+                    <label class="form-check-label" for="q8_2_c">Links to official company websites</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. What should you do if you see a suspicious pop-up?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_3" id="q8_3_a" value="a">
+                    <label class="form-check-label" for="q8_3_a">Click on the main message or button</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_3" id="q8_3_b" value="b">
+                    <label class="form-check-label" for="q8_3_b">Close it by clicking the X button</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_3" id="q8_3_c" value="c">
+                    <label class="form-check-label" for="q8_3_c">Download what it offers</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">4. Which tool would best protect you on public Wi-Fi?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_4" id="q8_4_a" value="a">
+                    <label class="form-check-label" for="q8_4_a">A VPN</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_4" id="q8_4_b" value="b">
+                    <label class="form-check-label" for="q8_4_b">An ad blocker</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_4" id="q8_4_c" value="c">
+                    <label class="form-check-label" for="q8_4_c">A newer browser</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">5. Why is keeping your software updated important?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_5" id="q8_5_a" value="a">
+                    <label class="form-check-label" for="q8_5_a">It makes things slower</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_5" id="q8_5_b" value="b">
+                    <label class="form-check-label" for="q8_5_b">Updates patch security vulnerabilities</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_5" id="q8_5_c" value="c">
+                    <label class="form-check-label" for="q8_5_c">It's not important</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">6. What is spyware?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_6" id="q8_6_a" value="a">
+                    <label class="form-check-label" for="q8_6_a">A type of advertisement</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_6" id="q8_6_b" value="b">
+                    <label class="form-check-label" for="q8_6_b">Software that secretly collects information about your activities</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_6" id="q8_6_c" value="c">
+                    <label class="form-check-label" for="q8_6_c">A security tool you install</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-8" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="7"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Complete Course</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

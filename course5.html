@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOCK-IN | Digital Citizenship & Online Etiquette</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">LOCK-IN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="courses.html">Cyber Institute</a></li>
+          <li class="nav-item"><a class="nav-link" href="games.html">Game Room</a></li>
+          <li class="nav-item"><a class="nav-link" href="directory.html">Info Vault</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Course Header -->
+  <section class="container-fluid py-4">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="fw-bold">Digital Citizenship & Online Etiquette</h1>
+          <p class="lead mb-0">Learn to be a respectful and responsible digital citizen</p>
+        </div>
+        <div>
+          <a href="courses.html" class="btn-custom"><span>← Back to Hub</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Bar -->
+  <section class="container-fluid py-3">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3">
+        <span class="text-light fw-bold">Progress:</span>
+        <div class="progress flex-grow-1" style="height: 25px;">
+          <div class="progress-bar" id="courseProgress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
+        <span class="text-light fw-bold" id="progressText">0/7</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Course Container -->
+  <div class="container my-5">
+    <div class="row">
+      
+      <!-- Sidebar - Chapter Navigation -->
+      <div class="col-lg-3 mb-4">
+        <div class="card-cyber p-3">
+          <h5 class="mb-3">Course Chapters</h5>
+          <div class="chapter-list">
+            
+            <!-- Chapter 1 -->
+            <div class="chapter-item active" data-chapter="1">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">▶</span>
+                <span class="chapter-title">What is Digital Citizenship?</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 2 -->
+            <div class="chapter-item locked" data-chapter="2">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Knowledge Check: Citizenship</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 3 -->
+            <div class="chapter-item locked" data-chapter="3">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Online Etiquette & Netiquette</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 4 -->
+            <div class="chapter-item locked" data-chapter="4">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Knowledge Check: Etiquette</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 5 -->
+            <div class="chapter-item locked" data-chapter="5">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Digital Rights & Responsibilities</span>
+              </div>
+            </div>
+
+            <!-- Chapter 6 -->
+            <div class="chapter-item locked" data-chapter="6">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Scenario Practice</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 7 -->
+            <div class="chapter-item locked" data-chapter="7">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Final Assessment</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="col-lg-9">
+        
+        <!-- Chapter Content Container -->
+        <div id="chapterContent" class="card-cyber p-4">
+          
+          <!-- CHAPTER 1: What is Digital Citizenship (Lesson) -->
+          <div class="chapter-content" id="chapter-1">
+            <h2 class="mb-4">Chapter 1: What is Digital Citizenship?</h2>
+            
+            <div class="lesson-content">
+              <h4>Understanding Digital Citizenship</h4>
+              <p>Digital citizenship is the set of skills, values, and attitudes that help us participate responsibly and respectfully in the digital world. Just as traditional citizenship involves community responsibility, digital citizenship involves being ethical and accountable online.</p>
+              
+              <h4 class="mt-4">The Nine Elements of Digital Citizenship</h4>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>1. Digital Access:</strong> Ensuring everyone has equal opportunity to use technology and the internet. Not everyone has the same access to technology, so we should be mindful of the digital divide.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>2. Digital Commerce:</strong> Buying and selling goods online safely and ethically. Understanding how to make secure purchases and recognizing fraudulent behavior.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>3. Digital Communication:</strong> Using technology to interact with others respectfully and effectively. This includes email, messaging, and video calls.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>4. Digital Literacy:</strong> Having the skills to find, understand, evaluate, and create information using technology. Critical thinking about online content is essential.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>5. Digital Etiquette:</strong> Understanding and practicing responsible behavior online. This includes respect, courtesy, and appropriate language.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>6. Digital Law:</strong> Understanding legal and ethical issues related to technology. This includes copyright, cyberbullying, and privacy laws.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>7. Digital Rights & Responsibilities:</strong> Knowing your rights online and understanding your responsibilities to respect others' rights.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>8. Digital Health & Wellness:</strong> Using technology in ways that support physical and mental health. Being aware of screen time and cybersickness.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>9. Digital Security & Privacy:</strong> Protecting personal information and using technology safely. Understanding passwords, phishing, and data protection.
+              </div>
+              
+              <h4 class="mt-4">Why Digital Citizenship Matters</h4>
+              <ul>
+                <li>Our online actions have real-world consequences</li>
+                <li>Digital footprints are permanent</li>
+                <li>Online behavior affects others</li>
+                <li>Technology shapes society and relationships</li>
+                <li>Being a good digital citizen builds trust and respect</li>
+              </ul>
+              
+              <h4 class="mt-4">The Digital Footprint</h4>
+              <p>Everything you post, share, or do online becomes part of your digital footprint. Future employers, colleges, and others may search for information about you. Making responsible choices online protects your reputation and future opportunities.</p>
+            </div>
+            
+            <div class="d-flex justify-content-end mt-4">
+              <button class="btn-custom next-chapter" data-next="2"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 2: Knowledge Check (Exercise) -->
+          <div class="chapter-content" id="chapter-2" style="display: none;">
+            <h2 class="mb-4">Chapter 2: Knowledge Check - Digital Citizenship</h2>
+            
+            <div class="exercise-content">
+              <h4>Test Your Understanding</h4>
+              <p>Let's review what you've learned about digital citizenship.</p>
+              
+              <form id="quiz-chapter-2" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. What is digital citizenship?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_a" value="a">
+                    <label class="form-check-label" for="q2_1_a">Only about buying things online</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_b" value="b">
+                    <label class="form-check-label" for="q2_1_b">Skills, values, and attitudes for responsible online participation</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_c" value="c">
+                    <label class="form-check-label" for="q2_1_c">Having many social media followers</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. What is a digital footprint?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_a" value="a">
+                    <label class="form-check-label" for="q2_2_a">A physical mark on a computer</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_b" value="b">
+                    <label class="form-check-label" for="q2_2_b">Everything you post, share, or do online</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_c" value="c">
+                    <label class="form-check-label" for="q2_2_c">Your password and login information</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. Why is understanding digital rights important?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_a" value="a">
+                    <label class="form-check-label" for="q2_3_a">It's not really important</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_b" value="b">
+                    <label class="form-check-label" for="q2_3_b">To protect yourself and respect others' rights</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_c" value="c">
+                    <label class="form-check-label" for="q2_3_c">Only lawyers need to know this</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-2" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="1"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 3: Online Etiquette (Lesson) -->
+          <div class="chapter-content" id="chapter-3" style="display: none;">
+            <h2 class="mb-4">Chapter 3: Online Etiquette & Netiquette</h2>
+            
+            <div class="lesson-content">
+              <h4>What is Netiquette?</h4>
+              <p>Netiquette (internet etiquette) is the set of rules for polite and respectful online communication. Just because you're behind a screen doesn't mean you shouldn't be courteous and considerate.</p>
+              
+              <h4 class="mt-4">Core Rules of Netiquette</h4>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>1. Treat Others with Respect:</strong> Remember that there's a real person on the other side of your message. Communicate as you would face-to-face.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>2. Don't Use ALL CAPS:</strong> Writing in all capitals is considered shouting. Use proper capitalization for normal communication.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>3. Be Mindful of Tone:</strong> Without facial expressions and tone of voice, sarcasm and jokes can be misunderstood. Use emojis carefully or clarify your intent.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>4. Check Spelling and Grammar:</strong> Take time to proofread your messages. It shows respect and improves clarity.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>5. Respect Privacy:</strong> Don't share other people's information, photos, or private conversations without permission.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>6. Think Before You Post:</strong> Ask yourself: Is this true? Is it kind? Is it necessary? If the answer is no to any, reconsider posting.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>7. Don't Spam or Troll:</strong> Respect people's time by not sending unwanted messages or posting deliberately inflammatory comments.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>8. Give Credit Where Due:</strong> If you share someone else's work, always credit them. Don't plagiarize or steal content.
+              </div>
+              
+              <h4 class="mt-4">Common Netiquette Mistakes</h4>
+              <ul>
+                <li>Sending angry messages without thinking (flaming)</li>
+                <li>Arguing or debating disrespectfully (trolling)</li>
+                <li>Sharing embarrassing photos or information about others</li>
+                <li>Ignoring people in group chats</li>
+                <li>Sending too many messages in a row</li>
+                <li>Using offensive language or slurs</li>
+                <li>Oversharing personal information</li>
+                <li>Interrupting online conversations</li>
+              </ul>
+              
+              <h4 class="mt-4">Professional Online Etiquette</h4>
+              <p>When communicating with teachers, employers, or in professional settings:</p>
+              <ul>
+                <li>Use formal language and proper punctuation</li>
+                <li>Use a professional email address</li>
+                <li>Include a clear subject line</li>
+                <li>Greet the person appropriately</li>
+                <li>Keep messages concise and focused</li>
+                <li>Proofread before sending</li>
+                <li>Respond within 24-48 hours</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="2"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="4"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 4: Etiquette Knowledge Check (Exercise) -->
+          <div class="chapter-content" id="chapter-4" style="display: none;">
+            <h2 class="mb-4">Chapter 4: Knowledge Check - Online Etiquette</h2>
+            
+            <div class="exercise-content">
+              <h4>Test Your Netiquette</h4>
+              <p>Let's see how well you understand online etiquette.</p>
+              
+              <form id="quiz-chapter-4" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. Why shouldn't you write in ALL CAPS?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_1" id="q4_1_a" value="a">
+                    <label class="form-check-label" for="q4_1_a">It uses too much battery</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_1" id="q4_1_b" value="b">
+                    <label class="form-check-label" for="q4_1_b">It's considered shouting and is disrespectful</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_1" id="q4_1_c" value="c">
+                    <label class="form-check-label" for="q4_1_c">It makes your message shorter</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. What's a good rule before posting online?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_2" id="q4_2_a" value="a">
+                    <label class="form-check-label" for="q4_2_a">Post immediately without thinking</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_2" id="q4_2_b" value="b">
+                    <label class="form-check-label" for="q4_2_b">Ask yourself: Is it true, kind, and necessary?</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_2" id="q4_2_c" value="c">
+                    <label class="form-check-label" for="q4_2_c">Share as much as possible</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. When sharing someone else's work, what should you do?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_3" id="q4_3_a" value="a">
+                    <label class="form-check-label" for="q4_3_a">Never share it at all</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_3" id="q4_3_b" value="b">
+                    <label class="form-check-label" for="q4_3_b">Always give them credit</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4_3" id="q4_3_c" value="c">
+                    <label class="form-check-label" for="q4_3_c">Claim it as your own</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-4" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="3"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 5: Digital Rights & Responsibilities (Lesson) -->
+          <div class="chapter-content" id="chapter-5" style="display: none;">
+            <h2 class="mb-4">Chapter 5: Digital Rights & Responsibilities</h2>
+            
+            <div class="lesson-content">
+              <h4>Understanding Your Digital Rights</h4>
+              <p>As a digital citizen, you have certain rights that protect you online. At the same time, you have responsibilities to respect the rights of others.</p>
+              
+              <h5 class="mt-4">Your Digital Rights</h5>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Right to Privacy:</strong> You have the right to keep your personal information private. Companies cannot use your data without permission. You can request to see what data companies have collected about you.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Right to Freedom of Expression:</strong> You can express your opinions online, though this right has limits. You cannot harass, threaten, or incite violence.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Right to Intellectual Property:</strong> Your creative work (photos, videos, writing) is protected. Others cannot use it without permission. This protection applies to others' work too.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Right to Digital Access:</strong> Everyone should have fair access to technology and the internet. Digital divide issues affect opportunities and fairness.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Right to Be Free from Harassment:</strong> You have the right to use technology without being bullied, threatened, or harassed.
+              </div>
+              
+              <h5 class="mt-4">Your Digital Responsibilities</h5>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Responsibility to Respect Privacy:</strong> Don't share others' personal information without permission. Respect their digital privacy as you want yours respected.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Responsibility to Use Content Legally:</strong> Don't pirate, plagiarize, or illegally download content. Pay for digital products and give credit to creators.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Responsibility to Communicate Respectfully:</strong> Don't cyberbully, harass, or threaten others. Treat people online as you would in person.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Responsibility to Report Abuse:</strong> If you see harassment, abuse, or illegal activity online, report it to the appropriate authorities or platform moderators.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Responsibility to Protect Your Information:</strong> Keep your passwords secure, don't share sensitive data, and be aware of scams and phishing attempts.
+              </div>
+              
+              <h4 class="mt-4">Digital Law & Copyright</h4>
+              <ul>
+                <li>Copyright protects original creative works for a certain period</li>
+                <li>Fair use allows limited use of copyrighted material for education, criticism, or news</li>
+                <li>Plagiarism is using someone's work without crediting them</li>
+                <li>Cyberbullying is illegal in many jurisdictions</li>
+                <li>Hacking and unauthorized access to accounts is a crime</li>
+                <li>Many countries have digital privacy laws (like GDPR in Europe)</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="4"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="6"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 6: Scenario Practice (Exercise) -->
+          <div class="chapter-content" id="chapter-6" style="display: none;">
+            <h2 class="mb-4">Chapter 6: Scenario Practice</h2>
+            
+            <div class="exercise-content">
+              <h4>What Would You Do?</h4>
+              <p>Read these scenarios and decide what the responsible digital citizen action would be.</p>
+              
+              <form id="quiz-chapter-6" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. Your friend shares an embarrassing photo of you on social media. What do you do?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_1" id="q6_1_a" value="a">
+                    <label class="form-check-label" for="q6_1_a">Share an embarrassing photo of them in retaliation</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_1" id="q6_1_b" value="b">
+                    <label class="form-check-label" for="q6_1_b">Ask them to remove it and explain how it made you feel</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_1" id="q6_1_c" value="c">
+                    <label class="form-check-label" for="q6_1_c">Report them to the police immediately</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. You find a great article online for a school project. What's the right thing to do?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_2" id="q6_2_a" value="a">
+                    <label class="form-check-label" for="q6_2_a">Copy and paste it into your project without citation</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_2" id="q6_2_b" value="b">
+                    <label class="form-check-label" for="q6_2_b">Cite the source and only use small quotes with permission</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_2" id="q6_2_c" value="c">
+                    <label class="form-check-label" for="q6_2_c">Don't use it at all</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. You see someone being cyberbullied in a group chat. What do you do?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_3" id="q6_3_a" value="a">
+                    <label class="form-check-label" for="q6_3_a">Join in and laugh along</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_3" id="q6_3_b" value="b">
+                    <label class="form-check-label" for="q6_3_b">Stay silent to avoid conflict</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_3" id="q6_3_c" value="c">
+                    <label class="form-check-label" for="q6_3_c">Support the victim and report the bullying</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">4. Someone asks for your password online. What do you do?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_4" id="q6_4_a" value="a">
+                    <label class="form-check-label" for="q6_4_a">Share it if they seem trustworthy</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_4" id="q6_4_b" value="b">
+                    <label class="form-check-label" for="q6_4_b">Never share your password with anyone</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6_4" id="q6_4_c" value="c">
+                    <label class="form-check-label" for="q6_4_c">Only share it with close friends</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-6" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="5"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 7: Final Assessment -->
+          <div class="chapter-content" id="chapter-7" style="display: none;">
+            <h2 class="mb-4">Chapter 7: Final Assessment</h2>
+            
+            <div class="exercise-content">
+              <h4>Complete Your Course</h4>
+              <p>You've learned about digital citizenship and online etiquette. Let's review everything!</p>
+              
+              <form id="quiz-chapter-7" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. Which element of digital citizenship involves buying and selling goods safely online?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_1" id="q7_1_a" value="a">
+                    <label class="form-check-label" for="q7_1_a">Digital Communication</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_1" id="q7_1_b" value="b">
+                    <label class="form-check-label" for="q7_1_b">Digital Commerce</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_1" id="q7_1_c" value="c">
+                    <label class="form-check-label" for="q7_1_c">Digital Literacy</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. What is the primary goal of netiquette?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_2" id="q7_2_a" value="a">
+                    <label class="form-check-label" for="q7_2_a">To make online communication as fast as possible</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_2" id="q7_2_b" value="b">
+                    <label class="form-check-label" for="q7_2_b">To ensure respectful and courteous online communication</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_2" id="q7_2_c" value="c">
+                    <label class="form-check-label" for="q7_2_c">To allow people to say whatever they want</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. What is intellectual property?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_3" id="q7_3_a" value="a">
+                    <label class="form-check-label" for="q7_3_a">Physical items you own</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_3" id="q7_3_b" value="b">
+                    <label class="form-check-label" for="q7_3_b">Creative works like art, writing, and music protected by copyright</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_3" id="q7_3_c" value="c">
+                    <label class="form-check-label" for="q7_3_c">Your personal thoughts and ideas only</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">4. Why is thinking about your digital footprint important?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_4" id="q7_4_a" value="a">
+                    <label class="form-check-label" for="q7_4_a">It doesn't matter, nothing is permanent online</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_4" id="q7_4_b" value="b">
+                    <label class="form-check-label" for="q7_4_b">Because it affects your reputation and future opportunities</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_4" id="q7_4_c" value="c">
+                    <label class="form-check-label" for="q7_4_c">Only celebrities need to worry about it</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">5. What should you do if you receive an unwanted message asking for personal information?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_5" id="q7_5_a" value="a">
+                    <label class="form-check-label" for="q7_5_a">Provide the information to be helpful</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_5" id="q7_5_b" value="b">
+                    <label class="form-check-label" for="q7_5_b">Ignore it and report it if it continues</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_5" id="q7_5_c" value="c">
+                    <label class="form-check-label" for="q7_5_c">Share it on social media to warn others</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">6. Which is NOT a digital right?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_6" id="q7_6_a" value="a">
+                    <label class="form-check-label" for="q7_6_a">Right to privacy online</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_6" id="q7_6_b" value="b">
+                    <label class="form-check-label" for="q7_6_b">The right to steal intellectual property</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q7_6" id="q7_6_c" value="c">
+                    <label class="form-check-label" for="q7_6_c">Right to be free from harassment</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-7" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="6"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Complete Course</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

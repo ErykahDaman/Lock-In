@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOCK-IN | Social Media Safety</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">LOCK-IN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="courses.html">Cyber Institute</a></li>
+          <li class="nav-item"><a class="nav-link" href="games.html">Game Room</a></li>
+          <li class="nav-item"><a class="nav-link" href="directory.html">Info Vault</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Course Header -->
+  <section class="container-fluid py-4">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="fw-bold">Social Media Safety</h1>
+          <p class="lead mb-0">Protect your privacy and stay safe online</p>
+        </div>
+        <div>
+          <a href="courses.html" class="btn-custom"><span>← Back to Hub</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Bar -->
+  <section class="container-fluid py-3">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3">
+        <span class="text-light fw-bold">Progress:</span>
+        <div class="progress flex-grow-1" style="height: 25px;">
+          <div class="progress-bar" id="courseProgress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
+        <span class="text-light fw-bold" id="progressText">0/9</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Course Container -->
+  <div class="container my-5">
+    <div class="row">
+      
+      <!-- Sidebar - Chapter Navigation -->
+      <div class="col-lg-3 mb-4">
+        <div class="card-cyber p-3">
+          <h5 class="mb-3">Course Chapters</h5>
+          <div class="chapter-list">
+            
+            <!-- Chapter 1 -->
+            <div class="chapter-item active" data-chapter="1">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">▶</span>
+                <span class="chapter-title">Social Media Risks</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 2 -->
+            <div class="chapter-item locked" data-chapter="2">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Knowledge Check: Risks</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 3 -->
+            <div class="chapter-item locked" data-chapter="3">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Privacy Settings Guide</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 4 -->
+            <div class="chapter-item locked" data-chapter="4">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Oversharing & Location</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 5 -->
+            <div class="chapter-item locked" data-chapter="5">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Practice: Privacy Check</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 6 -->
+            <div class="chapter-item locked" data-chapter="6">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Social Media Scams</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 7 -->
+            <div class="chapter-item locked" data-chapter="7">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Safe Posting Practices</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 8 -->
+            <div class="chapter-item locked" data-chapter="8">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Practice: Spot the Risk</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 9 -->
+            <div class="chapter-item locked" data-chapter="9">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Final Assessment</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="col-lg-9">
+        
+        <!-- Chapter Content Container -->
+        <div id="chapterContent" class="card-cyber p-4">
+          
+          <!-- CHAPTER 1: Social Media Risks (Lesson) -->
+          <div class="chapter-content" id="chapter-1">
+            <h2 class="mb-4">Chapter 1: Common Social Media Risks</h2>
+            
+            <div class="lesson-content">
+              <h4>Understanding Social Media Dangers</h4>
+              <p>Social media platforms connect billions of people worldwide, but they also expose users to various security and privacy risks. Understanding these risks is the first step to protecting yourself online.</p>
+              
+              <h4 class="mt-4">Major Risks You Should Know</h4>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🔓 Privacy Invasion:</strong> Sharing too much personal information can lead to identity theft, stalking, or unauthorized use of your data by third parties.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🎭 Fake Profiles & Impersonation:</strong> Scammers create fake accounts to trick people into sharing information, money, or compromising content.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>📍 Location Tracking:</strong> Posting your location in real-time can make you vulnerable to physical threats like burglary or stalking.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>💼 Professional Reputation Damage:</strong> Inappropriate posts can harm your career prospects as employers often check social media profiles.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>😢 Cyberbullying & Harassment:</strong> Online harassment can have serious emotional and psychological impacts.
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>🦠 Malware & Phishing:</strong> Malicious links in posts or messages can infect your device or steal your credentials.
+              </div>
+              
+              <h4 class="mt-4">Common Mistakes People Make</h4>
+              <ul>
+                <li><strong>Accepting friend requests from strangers</strong> - Could be scammers gathering information</li>
+                <li><strong>Using weak passwords</strong> - Easy for hackers to access your account</li>
+                <li><strong>Clicking suspicious links</strong> - May lead to phishing sites or malware</li>
+                <li><strong>Sharing sensitive information</strong> - Phone numbers, addresses, travel plans</li>
+                <li><strong>Posting photos of valuables</strong> - Makes you a target for theft</li>
+                <li><strong>Oversharing about children</strong> - Puts minors at risk</li>
+                <li><strong>Using public Wi-Fi without VPN</strong> - Exposes your data to hackers</li>
+              </ul>
+              
+              <h4 class="mt-4">Real-World Consequences</h4>
+              <p>Social media risks aren't just theoretical. They lead to:</p>
+              <ul>
+                <li>Financial loss through scams and fraud</li>
+                <li>Identity theft and account takeovers</li>
+                <li>Stalking and physical danger</li>
+                <li>Lost job opportunities</li>
+                <li>Emotional distress and mental health issues</li>
+                <li>Damaged personal relationships</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-end mt-4">
+              <button class="btn-custom next-chapter" data-next="2"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 2: Knowledge Check (Exercise) -->
+          <div class="chapter-content" id="chapter-2" style="display: none;">
+            <h2 class="mb-4">Chapter 2: Knowledge Check - Social Media Risks</h2>
+            
+            <div class="exercise-content">
+              <h4>Test Your Understanding</h4>
+              <p>Let's review what you've learned about social media risks.</p>
+              
+              <form id="quiz-chapter-2" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. Which of these is a major risk on social media?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_a" value="a">
+                    <label class="form-check-label" for="q2_1_a">Making new friends</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_b" value="b">
+                    <label class="form-check-label" for="q2_1_b">Privacy invasion and identity theft</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_c" value="c">
+                    <label class="form-check-label" for="q2_1_c">Sharing photos</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. Why is posting your location in real-time dangerous?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_a" value="a">
+                    <label class="form-check-label" for="q2_2_a">It helps friends find you</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_b" value="b">
+                    <label class="form-check-label" for="q2_2_b">It can make you vulnerable to stalking or burglary</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_c" value="c">
+                    <label class="form-check-label" for="q2_2_c">It's always safe</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. What's a common mistake people make on social media?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_a" value="a">
+                    <label class="form-check-label" for="q2_3_a">Using strong passwords</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_b" value="b">
+                    <label class="form-check-label" for="q2_3_b">Accepting friend requests from strangers</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_c" value="c">
+                    <label class="form-check-label" for="q2_3_c">Checking privacy settings regularly</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-2" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="1"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 3: Privacy Settings Guide (Lesson) -->
+          <div class="chapter-content" id="chapter-3" style="display: none;">
+            <h2 class="mb-4">Chapter 3: Privacy Settings Guide</h2>
+            
+            <div class="lesson-content">
+              <h4>Controlling Who Sees Your Information</h4>
+              <p>Every social media platform has privacy settings that control who can see your posts, profile information, and contact you. Properly configuring these settings is crucial for your online safety.</p>
+              
+              <h5 class="mt-4">📘 Facebook Privacy Settings</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>Essential Settings:</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Set "Who can see your posts?" to Friends only</li>
+                  <li>Limit "Who can send you friend requests?" to Friends of Friends</li>
+                  <li>Hide your phone number and email from public view</li>
+                  <li>Review and limit what others can see on your profile</li>
+                  <li>Turn off location tracking in posts</li>
+                  <li>Review tagged photos before they appear on your profile</li>
+                </ul>
+              </div>
+              
+              <h5 class="mt-4">📷 Instagram Privacy Settings</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>Key Protections:</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Switch to a Private Account (requires approval for followers)</li>
+                  <li>Disable activity status so others can't see when you're online</li>
+                  <li>Hide your story from specific people</li>
+                  <li>Restrict accounts that are bothering you</li>
+                  <li>Turn off location in post metadata</li>
+                  <li>Control who can comment on your posts</li>
+                </ul>
+              </div>
+              
+              <h5 class="mt-4">🐦 Twitter/X Privacy Settings</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>Privacy Controls:</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Protect your tweets (make account private)</li>
+                  <li>Remove location information from tweets</li>
+                  <li>Control who can tag you in photos</li>
+                  <li>Mute or block accounts</li>
+                  <li>Control DM privacy</li>
+                  <li>Limit discoverability by email/phone</li>
+                </ul>
+              </div>
+              
+              <h5 class="mt-4">🎵 TikTok Privacy Settings</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>Safety Features:</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Set account to Private</li>
+                  <li>Control who can comment, duet, or stitch</li>
+                  <li>Disable suggestions to others</li>
+                  <li>Turn off location sharing</li>
+                  <li>Limit who can send you messages</li>
+                  <li>Use restricted mode</li>
+                </ul>
+              </div>
+              
+              <h5 class="mt-4">💼 LinkedIn Privacy Settings</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>Professional Privacy:</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Control who can see your connections</li>
+                  <li>Hide last name from people outside your network</li>
+                  <li>Turn off profile viewing options</li>
+                  <li>Control data visibility to third parties</li>
+                  <li>Manage job-seeking status privacy</li>
+                </ul>
+              </div>
+              
+              <h4 class="mt-4">🔄 Regular Privacy Maintenance</h4>
+              <ul>
+                <li><strong>Review settings quarterly:</strong> Platforms update their privacy options</li>
+                <li><strong>Audit your friends/followers:</strong> Remove people you don't know</li>
+                <li><strong>Check app permissions:</strong> Revoke access to apps you don't use</li>
+                <li><strong>Review old posts:</strong> Delete or hide anything inappropriate</li>
+                <li><strong>Update security settings:</strong> Enable two-factor authentication</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="2"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="4"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 4: Oversharing & Location (Lesson) -->
+          <div class="chapter-content" id="chapter-4" style="display: none;">
+            <h2 class="mb-4">Chapter 4: Oversharing & Location Safety</h2>
+            
+            <div class="lesson-content">
+              <h4>The Danger of Sharing Too Much</h4>
+              <p>In the age of social media, it's easy to share every moment of your life. But oversharing can have serious consequences for your safety, privacy, and security.</p>
+              
+              <h5 class="mt-4">⚠️ What NOT to Share</h5>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>Personal Identification Information</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Full name, birthdate, and age (combined)</li>
+                  <li>Home address or detailed location</li>
+                  <li>Phone number</li>
+                  <li>Email address</li>
+                  <li>ID numbers or documents</li>
+                </ul>
+              </div>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>Financial Information</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Credit/debit card details</li>
+                  <li>Bank account information</li>
+                  <li>Receipts or invoices with account numbers</li>
+                  <li>Photos of expensive purchases or valuables</li>
+                </ul>
+              </div>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>Real-Time Location & Travel Plans</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Posting "At the airport!" or vacation announcements</li>
+                  <li>Check-ins at your current location</li>
+                  <li>Photos that show your home exterior or street address</li>
+                  <li>Daily routines (gym at 6am, work schedule)</li>
+                </ul>
+              </div>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>Children's Information</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Full names and birthdates</li>
+                  <li>School names or locations</li>
+                  <li>Daily schedules and activities</li>
+                  <li>Photos in school uniforms or identifiable locations</li>
+                </ul>
+              </div>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>Work & Professional Details</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Confidential work information</li>
+                  <li>Complaints about employer or colleagues</li>
+                  <li>Photos of security badges or access cards</li>
+                  <li>Detailed work schedule or business travel</li>
+                </ul>
+              </div>
+              
+              <h5 class="mt-4">📍 Location Safety Tips</h5>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Smart Location Sharing:</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Post vacation photos AFTER you return home</li>
+                  <li>Disable automatic location tagging on photos</li>
+                  <li>Remove EXIF data from photos before posting</li>
+                  <li>Use general locations (city) instead of specific addresses</li>
+                  <li>Never post "Home alone" or similar status updates</li>
+                </ul>
+              </div>
+              
+              <h5 class="mt-4">🤔 The "Think Before You Share" Checklist</h5>
+              <p>Before posting anything, ask yourself:</p>
+              <ul>
+                <li>Could this information be used to harm me?</li>
+                <li>Would I be comfortable with a stranger knowing this?</li>
+                <li>Could this affect my job or professional reputation?</li>
+                <li>Does this reveal where I live or my daily routine?</li>
+                <li>Am I sharing someone else's private information?</li>
+                <li>Will I regret this post in the future?</li>
+              </ul>
+              
+              <h5 class="mt-4">💡 Safe Sharing Alternatives</h5>
+              <div class="concept-box p-3 mb-3">
+                <p class="mb-0">Instead of posting publicly:</p>
+                <ul class="mt-2 mb-0">
+                  <li>Share with close friends only through private groups</li>
+                  <li>Use messaging apps for personal updates</li>
+                  <li>Wait until after events to share photos</li>
+                  <li>Keep security questions answers (pet names, school names) private</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="3"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="5"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 5: Practice - Privacy Check (Exercise) -->
+          <div class="chapter-content" id="chapter-5" style="display: none;">
+            <h2 class="mb-4">Chapter 5: Practice - Privacy Assessment</h2>
+            
+            <div class="exercise-content">
+              <h4>Is This Safe to Share?</h4>
+              <p>Test your judgment on what's safe to post on social media.</p>
+              
+              <form id="quiz-chapter-5" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. Sarah wants to post: "So excited! Leaving for 2-week Europe vacation tomorrow! House to myself!" Is this safe?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_1" id="q5_1_a" value="a">
+                    <label class="form-check-label" for="q5_1_a">Yes, it's fine to share excitement</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_1" id="q5_1_b" value="b">
+                    <label class="form-check-label" for="q5_1_b">No, it tells burglars the house will be empty</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_1" id="q5_1_c" value="c">
+                    <label class="form-check-label" for="q5_1_c">Yes, if only friends can see it</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. Which of these is SAFE to include in your profile?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_2" id="q5_2_a" value="a">
+                    <label class="form-check-label" for="q5_2_a">Your phone number for everyone to see</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_2" id="q5_2_b" value="b">
+                    <label class="form-check-label" for="q5_2_b">Your general interests and hobbies</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_2" id="q5_2_c" value="c">
+                    <label class="form-check-label" for="q5_2_c">Your home address</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. When is the best time to post vacation photos?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_3" id="q5_3_a" value="a">
+                    <label class="form-check-label" for="q5_3_a">While you're on vacation in real-time</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_3" id="q5_3_b" value="b">
+                    <label class="form-check-label" for="q5_3_b">Before you leave to build excitement</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_3" id="q5_3_c" value="c">
+                    <label class="form-check-label" for="q5_3_c">After you return home</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-5" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="4"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 6: Social Media Scams (Lesson) -->
+          <div class="chapter-content" id="chapter-6" style="display: none;">
+            <h2 class="mb-4">Chapter 6: Social Media Scams</h2>
+            
+            <div class="lesson-content">
+              <h4>Understanding Common Scams</h4>
+              <p>Scammers use social media to target vulnerable users. Learning to recognize scams is essential to protecting yourself and your money.</p>
+              
+              <h5 class="mt-4">🎭 Fake Profile Scams</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>How it works:</strong> Scammers create fake profiles using stolen photos or celebrity images. They build fake relationships to extract money or personal information.
+                <p class="mt-2 mb-0"><strong>Red flags:</strong> Profile just created, few posts, asks for money, too perfect photos, won't video call</p>
+              </div>
+              
+              <h5 class="mt-4">💰 Prize & Giveaway Scams</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>How it works:</strong> Posts claim you've won a prize or contest you never entered. They ask for personal info or payment to "claim" the prize.
+                <p class="mt-2 mb-0"><strong>Red flags:</strong> Unsolicited notifications, asks for payment/info upfront, pressure to act quickly</p>
+              </div>
+              
+              <h5 class="mt-4">🔐 Phishing Scams</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>How it works:</strong> Scammers send messages with malicious links pretending to be from social media platforms. Clicking links steals login credentials.
+                <p class="mt-2 mb-0"><strong>Red flags:</strong> Links in DMs, typos in official messages, urgent action required, unusual sender</p>
+              </div>
+              
+              <h5 class="mt-4">💵 Money Transfer Scams</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>How it works:</strong> Scammers ask for money for travel, medical emergencies, or "opportunities." Money is transferred and never returned.
+                <p class="mt-2 mb-0"><strong>Red flags:</strong> Requests for wire transfers, cryptocurrency, gift cards, newly established relationship</p>
+              </div>
+              
+              <h5 class="mt-4">🛍️ Fake Product Scams</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>How it works:</strong> Ads promote products at unbelievable prices. Payment is taken but product never arrives or is counterfeit.
+                <p class="mt-2 mb-0"><strong>Red flags:</strong> Too-good-to-be-true prices, no reviews, new accounts, payment only through gift cards/crypto</p>
+              </div>
+              
+              <h4 class="mt-4">🛡️ How to Protect Yourself</h4>
+              <ul>
+                <li>Never click links from unknown users</li>
+                <li>Verify requests by contacting the person through another method</li>
+                <li>Never send money to people you haven't met in person</li>
+                <li>Use strong, unique passwords for each account</li>
+                <li>Enable two-factor authentication</li>
+                <li>Trust your instincts - if something feels off, it probably is</li>
+                <li>Report suspicious accounts to the platform</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="5"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="7"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 7: Safe Posting Practices (Lesson) -->
+          <div class="chapter-content" id="chapter-7" style="display: none;">
+            <h2 class="mb-4">Chapter 7: Safe Posting Practices</h2>
+            
+            <div class="lesson-content">
+              <h4>Posting Responsibly</h4>
+              <p>What you share online can have lasting consequences. Developing good posting habits helps protect your reputation and privacy.</p>
+              
+              <h5 class="mt-4">✅ Best Practices for Safe Posting</h5>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Think Before You Post</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Ask: "Would I want my employer/grandparent seeing this?"</li>
+                  <li>Remember: Nothing on internet is truly deleted</li>
+                  <li>Consider how your post might be misinterpreted</li>
+                  <li>Don't post when emotional or angry</li>
+                </ul>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Control Your Audience</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Use privacy settings to limit who sees posts</li>
+                  <li>Create separate friend lists for different groups</li>
+                  <li>Post directly to specific people instead of publicly</li>
+                  <li>Use "Close Friends" stories instead of public ones</li>
+                </ul>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Protect Others' Privacy</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Get permission before posting photos of others</li>
+                  <li>Don't tag people without asking</li>
+                  <li>Don't share others' personal information</li>
+                  <li>Be especially careful with children's photos</li>
+                </ul>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Professional Boundaries</strong>
+                <ul class="mt-2 mb-0">
+                  <li>Don't criticize your employer or job online</li>
+                  <li>Keep work grievances offline</li>
+                  <li>Be professional in all posts</li>
+                  <li>Separate personal and professional social media</li>
+                </ul>
+              </div>
+              
+              <h5 class="mt-4">⚠️ What NOT to Post</h5>
+              <ul>
+                <li>Angry rants or negative comments about people</li>
+                <li>Misinformation or false claims</li>
+                <li>Anything that could be used for blackmail</li>
+                <li>Screenshots of private conversations</li>
+                <li>Complaints about work or school</li>
+                <li>Photos that compromise your safety</li>
+                <li>Anything you wouldn't want permanently public</li>
+              </ul>
+              
+              <h5 class="mt-4">🔍 Review Your Old Posts</h5>
+              <p>Regularly audit your social media history:</p>
+              <ul>
+                <li>Delete posts that no longer represent you</li>
+                <li>Remove embarrassing or risky photos</li>
+                <li>Delete location tags from old posts</li>
+                <li>Remove posts with personal information</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="6"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="8"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 8: Practice - Spot the Risk (Exercise) -->
+          <div class="chapter-content" id="chapter-8" style="display: none;">
+            <h2 class="mb-4">Chapter 8: Practice - Spot the Risk</h2>
+            
+            <div class="exercise-content">
+              <h4>Identify the Safety Issues</h4>
+              <p>Can you spot what's wrong with these social media scenarios?</p>
+              
+              <form id="quiz-chapter-8" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. A stranger requests to follow you. Their profile looks professional and has nice photos. You should:</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_1" id="q8_1_a" value="a">
+                    <label class="form-check-label" for="q8_1_a">Accept immediately - they look legit</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_1" id="q8_1_b" value="b">
+                    <label class="form-check-label" for="q8_1_b">Check their profile for red flags before deciding</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_1" id="q8_1_c" value="c">
+                    <label class="form-check-label" for="q8_1_c">Block them immediately</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. You get a message from Facebook saying "Confirm your password to continue using Facebook" with a link. What do you do?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_2" id="q8_2_a" value="a">
+                    <label class="form-check-label" for="q8_2_a">Click the link and enter your password</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_2" id="q8_2_b" value="b">
+                    <label class="form-check-label" for="q8_2_b">Go directly to Facebook.com instead of clicking the link</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_2" id="q8_2_c" value="c">
+                    <label class="form-check-label" for="q8_2_c">Forward the link to all your friends</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. You want to post a photo of your new laptop at home. What should you check first?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_3" id="q8_3_a" value="a">
+                    <label class="form-check-label" for="q8_3_a">Nothing - just post it immediately</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_3" id="q8_3_b" value="b">
+                    <label class="form-check-label" for="q8_3_b">Turn off location tagging and check who can see it</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_3" id="q8_3_c" value="c">
+                    <label class="form-check-label" for="q8_3_c">Post it to your public profile</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">4. Someone offers you a free $500 Amazon gift card for just filling out a "quick survey." You should:</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_4" id="q8_4_a" value="a">
+                    <label class="form-check-label" for="q8_4_a">Complete the survey immediately</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_4" id="q8_4_b" value="b">
+                    <label class="form-check-label" for="q8_4_b">Be suspicious - this is likely a scam</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q8_4" id="q8_4_c" value="c">
+                    <label class="form-check-label" for="q8_4_c">Share it with your friends</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-8" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="7"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 9: Final Assessment -->
+          <div class="chapter-content" id="chapter-9" style="display: none;">
+            <h2 class="mb-4">Chapter 9: Final Assessment</h2>
+            
+            <div class="exercise-content">
+              <h4>Complete Your Course</h4>
+              <p>You've learned about social media safety. Let's review everything!</p>
+              
+              <form id="quiz-chapter-9" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. Which is the most important privacy setting to configure?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_1" id="q9_1_a" value="a">
+                    <label class="form-check-label" for="q9_1_a">Who can see your posts and profile</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_1" id="q9_1_b" value="b">
+                    <label class="form-check-label" for="q9_1_b">What your profile picture is</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_1" id="q9_1_c" value="c">
+                    <label class="form-check-label" for="q9_1_c">How many followers you have</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. What information should you NEVER share on social media?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_2" id="q9_2_a" value="a">
+                    <label class="form-check-label" for="q9_2_a">Your favorite movies and books</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_2" id="q9_2_b" value="b">
+                    <label class="form-check-label" for="q9_2_b">Full address, phone number, and financial info</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_2" id="q9_2_c" value="c">
+                    <label class="form-check-label" for="q9_2_c">Photos of your vacation</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. How often should you review your privacy settings?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_3" id="q9_3_a" value="a">
+                    <label class="form-check-label" for="q9_3_a">Never - set them once and forget</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_3" id="q9_3_b" value="b">
+                    <label class="form-check-label" for="q9_3_b">Quarterly or when platforms update</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_3" id="q9_3_c" value="c">
+                    <label class="form-check-label" for="q9_3_c">Only if you get hacked</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">4. What's the safest response to a suspicious friend request?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_4" id="q9_4_a" value="a">
+                    <label class="form-check-label" for="q9_4_a">Accept it to be polite</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_4" id="q9_4_b" value="b">
+                    <label class="form-check-label" for="q9_4_b">Ignore or block it</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_4" id="q9_4_c" value="c">
+                    <label class="form-check-label" for="q9_4_c">Message them asking who they are</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">5. What should you do if someone offers you money or prizes online?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_5" id="q9_5_a" value="a">
+                    <label class="form-check-label" for="q9_5_a">Take it - free money!</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_5" id="q9_5_b" value="b">
+                    <label class="form-check-label" for="q9_5_b">Be skeptical and verify the offer</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q9_5" id="q9_5_c" value="c">
+                    <label class="form-check-label" for="q9_5_c">Give them your banking information</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-9" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="8"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Complete Course</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  

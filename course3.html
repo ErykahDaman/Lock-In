@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOCK-IN | Password Security</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">LOCK-IN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="courses.html">Cyber Institute</a></li>
+          <li class="nav-item"><a class="nav-link" href="games.html">Game Room</a></li>
+          <li class="nav-item"><a class="nav-link" href="directory.html">Info Vault</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Course Header -->
+  <section class="container-fluid py-4">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="fw-bold">Password Security</h1>
+          <p class="lead mb-0">Create strong passwords and protect your accounts</p>
+        </div>
+        <div>
+          <a href="courses.html" class="btn-custom"><span>← Back to Hub</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Bar -->
+  <section class="container-fluid py-3">
+    <div class="container">
+      <div class="d-flex align-items-center gap-3">
+        <span class="text-light fw-bold">Progress:</span>
+        <div class="progress flex-grow-1" style="height: 25px;">
+          <div class="progress-bar" id="courseProgress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
+        <span class="text-light fw-bold" id="progressText">0/10</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Course Container -->
+  <div class="container my-5">
+    <div class="row">
+      
+      <!-- Sidebar - Chapter Navigation -->
+      <div class="col-lg-3 mb-4">
+        <div class="card-cyber p-3">
+          <h5 class="mb-3">Course Chapters</h5>
+          <div class="chapter-list">
+            
+            <!-- Chapter 1 -->
+            <div class="chapter-item active" data-chapter="1">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">▶</span>
+                <span class="chapter-title">Why Passwords Matter</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 2 -->
+            <div class="chapter-item locked" data-chapter="2">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Knowledge Check: Basics</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 3 -->
+            <div class="chapter-item locked" data-chapter="3">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Common Password Mistakes</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 4 -->
+            <div class="chapter-item locked" data-chapter="4">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Creating Strong Passwords</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 5 -->
+            <div class="chapter-item locked" data-chapter="5">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Practice: Password Strength</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 6 -->
+            <div class="chapter-item locked" data-chapter="6">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Password Managers</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 7 -->
+            <div class="chapter-item locked" data-chapter="7">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Passphrases & Techniques</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 8 -->
+            <div class="chapter-item locked" data-chapter="8">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Practice: Create Passwords</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 9 -->
+            <div class="chapter-item locked" data-chapter="9">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Password Best Practices</span>
+              </div>
+            </div>
+            
+            <!-- Chapter 10 -->
+            <div class="chapter-item locked" data-chapter="10">
+              <div class="d-flex align-items-center gap-2">
+                <span class="chapter-icon">🔒</span>
+                <span class="chapter-title">Final Assessment</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="col-lg-9">
+        
+        <!-- Chapter Content Container -->
+        <div id="chapterContent" class="card-cyber p-4">
+          
+          <!-- CHAPTER 1: Why Passwords Matter (Lesson) -->
+          <div class="chapter-content" id="chapter-1">
+            <h2 class="mb-4">Chapter 1: Why Passwords Matter</h2>
+            
+            <div class="lesson-content">
+              <h4>The Importance of Strong Passwords</h4>
+              <p>Passwords are your first line of defense against unauthorized access to your digital life. They protect everything from your email and social media accounts to your bank accounts and work files.</p>
+              
+              <h4 class="mt-4">What Happens With Weak Passwords?</h4>
+              <div class="concept-box p-3 mb-3">
+                <strong>💸 Financial Loss:</strong> Hackers can access your banking and shopping accounts to steal money or make unauthorized purchases.
+              </div>
+              <div class="concept-box p-3 mb-3">
+                <strong>🔓 Account Takeover:</strong> Your email, social media, or work accounts can be hijacked and used to scam others.
+              </div>
+              <div class="concept-box p-3 mb-3">
+                <strong>📄 Data Theft:</strong> Personal documents, photos, and sensitive information can be stolen or leaked.
+              </div>
+              <div class="concept-box p-3 mb-3">
+                <strong>🎭 Identity Theft:</strong> Criminals can use your accounts to impersonate you and commit fraud.
+              </div>
+              
+              <h4 class="mt-4">How Hackers Attack Passwords</h4>
+              <ul>
+                <li><strong>Brute Force Attacks:</strong> Trying millions of password combinations automatically</li>
+                <li><strong>Dictionary Attacks:</strong> Using common words and phrases from dictionaries</li>
+                <li><strong>Credential Stuffing:</strong> Reusing leaked passwords from data breaches</li>
+                <li><strong>Social Engineering:</strong> Tricking you into revealing your password</li>
+                <li><strong>Keylogging:</strong> Recording your keystrokes through malware</li>
+              </ul>
+              
+              <h4 class="mt-4">The Reality of Password Security</h4>
+              <p>Studies show that:</p>
+              <ul>
+                <li>Over 80% of data breaches involve weak or stolen passwords</li>
+                <li>Simple passwords can be cracked in seconds</li>
+                <li>Most people reuse passwords across multiple accounts</li>
+                <li>Strong passwords can take centuries to crack with current technology</li>
+              </ul>
+            </div>
+            
+            <div class="d-flex justify-content-end mt-4">
+              <button class="btn-custom next-chapter" data-next="2"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 2: Knowledge Check (Exercise) -->
+          <div class="chapter-content" id="chapter-2" style="display: none;">
+            <h2 class="mb-4">Chapter 2: Knowledge Check - Password Basics</h2>
+            
+            <div class="exercise-content">
+              <h4>Test Your Understanding</h4>
+              <p>Let's review what you've learned about password importance.</p>
+              
+              <form id="quiz-chapter-2" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. What is the primary purpose of a strong password?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_a" value="a">
+                    <label class="form-check-label" for="q2_1_a">To make it hard to remember</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_b" value="b">
+                    <label class="form-check-label" for="q2_1_b">To protect your accounts from unauthorized access</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_1" id="q2_1_c" value="c">
+                    <label class="form-check-label" for="q2_1_c">To impress your friends</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. Which attack method tries millions of password combinations?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_a" value="a">
+                    <label class="form-check-label" for="q2_2_a">Brute force attack</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_b" value="b">
+                    <label class="form-check-label" for="q2_2_b">Phishing attack</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_2" id="q2_2_c" value="c">
+                    <label class="form-check-label" for="q2_2_c">Malware attack</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. What percentage of data breaches involve weak or stolen passwords?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_a" value="a">
+                    <label class="form-check-label" for="q2_3_a">About 20%</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_b" value="b">
+                    <label class="form-check-label" for="q2_3_b">About 50%</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2_3" id="q2_3_c" value="c">
+                    <label class="form-check-label" for="q2_3_c">Over 80%</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-2" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="1"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 3: Common Password Mistakes (Lesson) -->
+          <div class="chapter-content" id="chapter-3" style="display: none;">
+            <h2 class="mb-4">Chapter 3: Common Password Mistakes</h2>
+            
+            <div class="lesson-content">
+              <h4>Passwords to Avoid</h4>
+              <p>Understanding common mistakes helps you avoid creating weak passwords that are easily compromised.</p>
+              
+              <h5 class="mt-4">❌ The Worst Password Choices</h5>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>1. Common Passwords</strong>
+                <p class="mb-0 mt-2">Millions of people use these passwords - they're cracked instantly:</p>
+                <ul class="mt-2 mb-0">
+                  <li>password, password123, 123456</li>
+                  <li>qwerty, abc123, admin</li>
+                  <li>welcome, letmein, iloveyou</li>
+                </ul>
+              </div>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>2. Personal Information</strong>
+                <p class="mb-0 mt-2">Easy to guess or find on social media:</p>
+                <ul class="mt-2 mb-0">
+                  <li>Your name, birthdate, or anniversary</li>
+                  <li>Pet names, children's names</li>
+                  <li>Phone numbers or addresses</li>
+                  <li>Favorite sports teams or bands</li>
+                </ul>
+              </div>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>3. Sequential Patterns</strong>
+                <p class="mb-0 mt-2">These follow predictable patterns:</p>
+                <ul class="mt-2 mb-0">
+                  <li>123456789, abcdefgh</li>
+                  <li>qwertyuiop (keyboard patterns)</li>
+                  <li>aaaaaaa, 11111111</li>
+                </ul>
+              </div>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>4. Simple Substitutions</strong>
+                <p class="mb-0 mt-2">Hackers know these tricks:</p>
+                <ul class="mt-2 mb-0">
+                  <li>P@ssw0rd (replacing letters with symbols/numbers)</li>
+                  <li>Password1! (adding a single symbol/number)</li>
+                  <li>pa55word (basic character substitution)</li>
+                </ul>
+              </div>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>5. Reusing Passwords</strong>
+                <p class="mb-0 mt-2">Using the same password across multiple accounts means:</p>
+                <ul class="mt-2 mb-0">
+                  <li>If one account is breached, all are at risk</li>
+                  <li>Hackers automatically try leaked passwords on other sites</li>
+                  <li>A single compromise can cascade across your digital life</li>
+                </ul>
+              </div>
+              
+              <div class="alert-box p-3 mb-3">
+                <strong>6. Short Passwords</strong>
+                <p class="mb-0 mt-2">Length matters more than complexity:</p>
+                <ul class="mt-2 mb-0">
+                  <li>6-character passwords: Cracked in seconds</li>
+                  <li>8-character passwords: Cracked in hours/days</li>
+                  <li>12+ character passwords: Can take centuries</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="2"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="4"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 4: Creating Strong Passwords (Lesson) -->
+          <div class="chapter-content" id="chapter-4" style="display: none;">
+            <h2 class="mb-4">Chapter 4: Creating Strong Passwords</h2>
+            
+            <div class="lesson-content">
+              <h4>The Anatomy of a Strong Password</h4>
+              <p>A truly strong password combines multiple elements to create something difficult to crack but possible to remember.</p>
+              
+              <h5 class="mt-4">✅ Key Characteristics</h5>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>1. Length (Minimum 12 characters)</strong>
+                <p class="mb-0 mt-2">Longer passwords are exponentially harder to crack. Aim for 12-16 characters or more.</p>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>2. Complexity (Mix of Characters)</strong>
+                <p class="mb-0 mt-2">Include:</p>
+                <ul class="mt-2 mb-0">
+                  <li>Uppercase letters (A-Z)</li>
+                  <li>Lowercase letters (a-z)</li>
+                  <li>Numbers (0-9)</li>
+                  <li>Special characters (!@#$%^&*)</li>
+                </ul>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>3. Unpredictability</strong>
+                <p class="mb-0 mt-2">Avoid dictionary words, personal information, and common patterns.</p>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>4. Uniqueness</strong>
+                <p class="mb-0 mt-2">Every account should have a completely different password.</p>
+              </div>
+              
+              <h5 class="mt-4">💡 Password Creation Methods</h5>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Method 1: Random Generation</strong>
+                <p class="mb-0 mt-2">Use a password manager to generate completely random passwords like: <code>Kp9#mL2$xQ7@vN4!</code></p>
+                <p class="mb-0 mt-2"><em>Pros:</em> Maximum security<br><em>Cons:</em> Impossible to remember without a password manager</p>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Method 2: Passphrases</strong>
+                <p class="mb-0 mt-2">String together random words: <code>Correct-Horse-Battery-Staple</code></p>
+                <p class="mb-0 mt-2"><em>Pros:</em> Easier to remember, still very secure<br><em>Cons:</em> Needs to be truly random words</p>
+              </div>
+              
+              <div class="concept-box p-3 mb-3">
+                <strong>Method 3: Sentence Method</strong>
+                <p class="mb-0 mt-2">Take first letters of a memorable sentence and add numbers/symbols:</p>
+                <p class="mb-0 mt-2">Sentence: "I love to eat 5 pizzas every Saturday at 7pm!"<br>Password: <code>Ilte5peS@7pm!</code></p>
+              </div>
+              
+              <h5 class="mt-4">🎯 Examples</h5>
+              <table class="table table-dark mt-3">
+                <thead>
+                  <tr>
+                    <th>Password</th>
+                    <th>Strength</th>
+                    <th>Time to Crack</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>password</td>
+                    <td><span class="text-danger">Weak</span></td>
+                    <td>Instant</td>
+                  </tr>
+                  <tr>
+                    <td>Password123!</td>
+                    <td><span class="text-warning">Weak</span></td>
+                    <td>Seconds</td>
+                  </tr>
+                  <tr>
+                    <td>P@ssw0rd!2024</td>
+                    <td><span class="text-warning">Medium</span></td>
+                    <td>Hours to days</td>
+                  </tr>
+                  <tr>
+                    <td>C0rr3ct-H0rs3-B@tt3ry</td>
+                    <td><span class="text-success">Strong</span></td>
+                    <td>Centuries</td>
+                  </tr>
+                  <tr>
+                    <td>Kp9#mL2$xQ7@vN4!wZ8*</td>
+                    <td><span class="text-success">Very Strong</span></td>
+                    <td>Billions of years</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="3"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="5"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <!-- CHAPTER 5: Practice - Password Strength (Exercise) -->
+          <div class="chapter-content" id="chapter-5" style="display: none;">
+            <h2 class="mb-4">Chapter 5: Practice - Evaluate Password Strength</h2>
+            
+            <div class="exercise-content">
+              <h4>Can You Identify Strong Passwords?</h4>
+              <p>Test your ability to evaluate password security.</p>
+              
+              <form id="quiz-chapter-5" class="quiz-form">
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">1. Which password is the STRONGEST?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_1" id="q5_1_a" value="a">
+                    <label class="form-check-label" for="q5_1_a">John2024!</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_1" id="q5_1_b" value="b">
+                    <label class="form-check-label" for="q5_1_b">Tr0p1c@l-P!n3@ppl3-0n-7h3-B3@ch</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_1" id="q5_1_c" value="c">
+                    <label class="form-check-label" for="q5_1_c">password123456</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">2. What's wrong with using "P@ssw0rd" as your password?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_2" id="q5_2_a" value="a">
+                    <label class="form-check-label" for="q5_2_a">It's too complex</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_2" id="q5_2_b" value="b">
+                    <label class="form-check-label" for="q5_2_b">Simple substitutions are well-known to hackers</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_2" id="q5_2_c" value="c">
+                    <label class="form-check-label" for="q5_2_c">Nothing, it's a strong password</label>
+                  </div>
+                </div>
+                
+                <div class="question-block mb-4">
+                  <p class="fw-bold">3. What is the recommended minimum length for a strong password?</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_3" id="q5_3_a" value="a">
+                    <label class="form-check-label" for="q5_3_a">6 characters</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_3" id="q5_3_b" value="b">
+                    <label class="form-check-label" for="q5_3_b">8 characters</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5_3" id="q5_3_c" value="c">
+                    <label class="form-check-label" for="q5_3_c">12 characters or more</label>
+                  </div>
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-chapter-5" style="display: none;"></div>
+                
+                <div class="d-flex justify-content-between mt-4">
+                  <button type="button" class="btn-custom prev-chapter" data-prev="4"><span>← Previous</span></button>
+                  <button type="submit" class="btn-custom"><span>Submit Answers</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CHAPTER 6-10: Placeholder structure -->
+          <div class="chapter-content" id="chapter-6" style="display: none;">
+            <h2 class="mb-4">Chapter 6: Password Managers</h2>
+            <div class="lesson-content">
+              <h4>What is a Password Manager?</h4>
+              <p>A password manager is a secure application that stores and manages all your passwords in an encrypted vault. You only need to remember one master password to access all your other passwords.</p>
+              
+              <h5 class="mt-4">Benefits of Password Managers</h5>
+              <ul>
+                <li>Generate strong, random passwords automatically</li>
+                <li>Store unlimited passwords securely</li>
+                <li>Auto-fill login forms</li>
+                <li>Sync across all your devices</li>
+                <li>Alert you about weak or reused passwords</li>
+                <li>Protect against phishing (won't auto-fill on fake sites)</li>
+              </ul>
+              
+              <h5 class="mt-4">Popular Password Managers</h5>
+              <div class="concept-box p-3 mb-3">
+                <strong>Bitwarden:</strong> Free, open-source, excellent security
+              </div>
+              <div class="concept-box p-3 mb-3">
+                <strong>1Password:</strong> User-friendly, great for families
+              </div>
+              <div class="concept-box p-3 mb-3">
+                <strong>LastPass:</strong> Popular, free tier available
+              </div>
+              <div class="concept-box p-3 mb-3">
+                <strong>Dashlane:</strong> Advanced features, VPN included
+              </div>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="5"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="7"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <div class="chapter-content" id="chapter-7" style="display: none;">
+            <h2 class="mb-4">Chapter 7: Passphrases & Advanced Techniques</h2>
+            <div class="lesson-content">
+              <p>Content for Chapter 7 goes here...</p>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+              <button class="btn-custom prev-chapter" data-prev="6"><span>← Previous</span></button>
+              <button class="btn-custom next-chapter" data-next="8"><span>Continue →</span></button>
+            </div>
+          </div>
+
+          <div class="chapter-content" id="chapter-8" style="display: none;">
