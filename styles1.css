@@ -352,35 +352,92 @@ section {
 }
 
 /* Hero/Carousel */
+/* Make carousel items have a blurred glass background instead of showing the image */
+/* Hero section full height */
+#hero {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Each slide */
+.carousel-item {
+  position: relative;
+  height: 100vh;
+}
+
+/* Shrink and blur the background images */
 .hero-img {
-  height: 600px;
-  object-fit: cover;
-  filter: brightness(0.6);
+  width: 60%;               /* reduce image size */
+  height: auto;
+  margin: 0 auto;            /* center it horizontally */
+  opacity: 0.4;              /* dim it */
+  filter: blur(4px);         /* add soft blur */
+  object-fit: contain;       /* keep full image aspect */
+  display: block;
+  transition: all 0.5s ease-in-out;
 }
 
-.carousel-caption {
-  height: 100%;
+/* Center caption with glass look */
+/* Hero section */
+#hero {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Each carousel slide */
+.carousel-item {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Uniform, smaller, softly blurred images */
+
+
+/* Hero section */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  background: url('dashboard-bg.jpg') center/cover no-repeat;
+  /* Optional: add a dark overlay */
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
   top: 0;
-  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: drop-shadow(0 0 10px rgba(0, 255, 251, 0.6));
+.hero-section .container {
+  position: relative;
+  z-index: 1;
 }
 
-/* Glowing Effects */
-.glow-cyan {
-  box-shadow: 0 0 20px rgba(0, 255, 251, 0.5);
+.hero-section h1 {
+  font-size: 3rem;
+  color: #00ffb3;
+  text-shadow: 0 0 15px rgba(0, 255, 179, 0.4);
 }
 
-.glow-purple {
-  box-shadow: 0 0 20px rgba(126, 3, 170, 0.5);
+.hero-section p {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 30px;
 }
 
-.glow-blue {
-  box-shadow: 0 0 20px rgba(16, 151, 241, 0.5);
+.hero-section .btn {
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
 }
+
 
 /* Scrollbar */
 ::-webkit-scrollbar {
