@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Two Truths and a Lie — Cyber Edition</title>
+  <style>
+    body{font-family:Inter,system-ui,Arial;margin:0;background:linear-gradient(180deg,#020617,#0f172a);color:#e2e8f0;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+    .game{max-width:640px;width:100%;background:rgba(255,255,255,0.05);padding:20px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.5)}
+    h1{text-align:center;margin-top:0;font-size:24px;color:#38bdf8}
+    .facts{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+    .fact{padding:12px 14px;background:rgba(255,255,255,0.08);border-radius:10px;cursor:pointer;transition:all .2s ease;border:1px solid transparent}
+    .fact:hover{background:rgba(255,255,255,0.12)}
+    .fact.selected{border-color:#38bdf8;background:rgba(56,189,248,0.1)}
+    button{margin-top:20px;padding:10px 16px;border:0;border-radius:8px;background:linear-gradient(90deg,#06b6d4,#3b82f6);color:white;font-weight:700;cursor:pointer}
+    .result{margin-top:20px;padding:12px;background:rgba(255,255,255,0.05);border-radius:8px}
+  </style>
+</head>
+<body>
+  <div class="game">
+    <h1>Two Truths and a Lie — Cyber Edition</h1>
+    <div id="prompt">Select which cyber statement is FALSE:</div>
+    <div class="facts" id="facts"></div>
+    <button id="submitBtn">Submit Guess</button>
+    <div id="result" class="result" style="display:none"></div>
+  </div>
+
+  <script>
+  const rounds = [
+    {
+      facts: [
+        { text: 'Phishing emails often impersonate trusted brands or coworkers.', truth: true, explain: 'Correct — attackers rely on familiarity to trick victims.' },
+        { text: 'HTTPS guarantees that a website is completely safe from attacks.', truth: false, explain: 'Incorrect — HTTPS encrypts traffic but doesn’t guarantee safety. Websites can still host malware or phishing pages.' },
+        { text: 'Two-factor authentication adds an extra layer of account security.', truth: true, explain: 'Correct — it protects you even if your password is stolen.' }
+      ]
+    },
+    {
+      facts: [
+        { text: 'Public Wi-Fi is always safe if it has a password.', truth: false, explain: 'Incorrect — even password-protected public Wi-Fi can be compromised or snooped on.' },
+        { text: 'Strong, unique passwords help prevent credential stuffing attacks.', truth: true, explain: 'Correct — attackers rely on reused passwords across sites.' },
+        { text: 'Keeping your software updated helps close security vulnerabilities.', truth: true, explain: 'Correct — patches fix known weaknesses before they’re exploited.' }
+      ]
+    },
+    {
+      facts: [
+        { text: 'USB drives from unknown sources can contain malware.', truth: true, explain: 'Correct — plugging them in can automatically execute malicious code.' },
+        { text: 'Antivirus software can detect 100% of all new malware.', truth: false, explain: 'Incorrect — no antivirus is perfect. New variants appear daily.' },
+        { text: 'Social engineering relies on manipulating human trust.', truth: true, explain: 'Correct — it’s often easier to trick people than hack systems.' }
+      ]
+    }
+  ];
+
+  let current = 0;
+  let selected = null;
+  const factsEl = document.getElementById('facts');
+  const resultEl = document.getElementById('result');
+  const submitBtn = document.getElementById('submitBtn');
+
+  function renderRound() {
+    resultEl.style.display = 'none';
+    factsEl.innerHTML = '';
+    selected = null;
+    rounds[current].facts.forEach((f, i) => {
+      const div = document.createElement('div');
+      div.className = 'fact';
+      div.textContent = f.text;
+      div.onclick = () => selectFact(i);
+      factsEl.appendChild(div);
+    });
+  }
+
+  function selectFact(i) {
+    selected = i;
+    document.querySelectorAll('.fact').forEach((el, idx) =>
+      el.classList.toggle('selected', idx === i)
+    );
+  }
+
+  function handleSubmit() {
+    if (selected === null) {
+      alert('Please select a statement first!');
+      return;
+    }
+
+    const fact = rounds[current].facts[selected];
+    const correctLie = rounds[current].facts.find(f => !f.truth);
+    resultEl.style.display = 'block';
+
+    if (!fact.truth) {
+      resultEl.innerHTML = `✅ Correct! <strong>\"${fact.text}\"</strong> was the lie.<br><br>${fact.explain}`;
+    } else {
+      resultEl.innerHTML = `❌ Oops! <strong>\"${fact.text}\"</strong> is actually true.<br><br>${fact.explain}<br><br>The false statement was: <em>${correctLie.text}</em>`;
+    }
+
+    // Move to next round after showing the result
+    current = (current + 1) % rounds.length;
+    submitBtn.textContent = 'Next Round';
+    submitBtn.onclick = handleNextRound;
+  }
+
+  function handleNextRound() {
+    submitBtn.textContent = 'Submit Guess';
+    submitBtn.onclick = handleSubmit;
+    renderRound();
+  }
+
+  submitBtn.onclick = handleSubmit;
+  renderRound();
+</script>
+</body>
+</html>
