@@ -19,7 +19,10 @@
     Your browser does not support the video tag.
   </video>
   <div class="overlay"></div>
-
+  <!-- chatbase-->
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="CxzKQFOyqbcsSPkhzE9_1";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
     <div class="container-fluid">
@@ -574,5 +577,6 @@
               <button class="btn-custom next-chapter" data-next="8"><span>Continue →</span></button>
             </div>
           </div>
+
 
           <div class="chapter-content" id="chapter-8" style="display: none;">
