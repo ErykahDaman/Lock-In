@@ -1,6 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Phish or Legit — Simple JS Game</title>
@@ -38,28 +39,94 @@
       position: fixed;
       top: 0;
       left: 0;
+=======
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phish or Legit — LOCK-IN Security Game</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles1.css">
+  
+  <style>
+    /* Minimal game-specific styles */
+    .app {
+      width: 90%;
+      max-width: 1000px;
+      margin: 120px auto 40px;
+    }
+
+    .email-stage {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .email-view {
+      flex: 1;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      color: #000;
+      min-height: 300px;
+      max-height: 400px;
+      overflow-y: auto;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .email-view a {
+      color: #2563eb;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .email-view mark {
+      background: rgba(251, 113, 133, 0.25);
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+
+    .email-view mark.highlight-ok {
+      background: rgba(52, 211, 153, 0.25);
+    }
+
+    .controls {
+      width: 280px;
+    }
+
+    .game-button {
+>>>>>>> 5f16df6c789dd315f1064e765a38a099cc6f6efa
       width: 100%;
-      background: rgba(5, 10, 20, 0.85);
-      backdrop-filter: blur(6px);
-      z-index: 1000;
-      padding: 10px 40px;
-    }
-    .navbar-brand {
-      color: #38bdf8 !important;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: rgba(139, 92, 246, 0.2);
+      border: 2px solid rgba(139, 92, 246, 0.5);
+      color: #a78bfa;
+      border-radius: 8px;
+      cursor: pointer;
       font-weight: bold;
-      letter-spacing: 1px;
+      transition: all 0.2s;
     }
-    .nav-link {
-      color: #e6eef6 !important;
-      transition: 0.3s;
+
+    .game-button:hover:not(:disabled) {
+      background: rgba(139, 92, 246, 0.4);
+      box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
     }
-    .nav-link:hover {
-      color: #38bdf8 !important;
-      text-shadow: 0 0 6px #38bdf8;
+
+    .game-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
-    .nav-link.active {
-      color: #38bdf8 !important;
+
+    .progress {
+      height: 8px;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 16px 0;
+      border: 1px solid rgba(139, 92, 246, 0.2);
     }
+<<<<<<< HEAD
     header{
       display:flex;
       align-items:center;
@@ -199,122 +266,199 @@
     @media (max-width:860px){
       .email-stage{flex-direction:column}
       .controls{width:100%}
+=======
+
+    .progress > i {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .modal-game {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5, 10, 26, 0.85);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+    }
+
+    .modal-game.active {
+      display: flex;
+    }
+
+    .modal-panel {
+      background: linear-gradient(135deg, rgba(15, 18, 32, 0.95), rgba(10, 14, 27, 0.95));
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      padding: 24px;
+      border-radius: 16px;
+      width: 600px;
+      max-width: 90%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-panel h3 {
+      color: #a78bfa;
+      margin-bottom: 12px;
+    }
+
+    .modal-panel p {
+      color: #e6eef6;
+      margin-bottom: 12px;
+    }
+
+    .reason-list li {
+      color: #b0b0b0;
+      margin-bottom: 8px;
+    }
+
+    .btn-modal {
+      background: rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.5);
+      color: #a78bfa;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-modal:hover {
+      background: rgba(139, 92, 246, 0.4);
+      box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
+    }
+
+    @media (max-width: 860px) {
+      .email-stage {
+        flex-direction: column;
+      }
+      .controls {
+        width: 100%;
+      }
+>>>>>>> 5f16df6c789dd315f1064e765a38a099cc6f6efa
     }
   </style>
 </head>
 <body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
 
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">LOCK-IN</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <a class="navbar-brand fw-bold" href="index.html">LOCK-IN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="institute.html">Cyber Institute</a></li>
-          <li class="nav-item"><a class="nav-link active" href="games.html">Game Room</a></li>
+          <li class="nav-item"><a class="nav-link active" href="courses.html">Cyber Institute</a></li>
+          <li class="nav-item"><a class="nav-link" href="games.html">Game Room</a></li>
           <li class="nav-item"><a class="nav-link" href="directory.html">Info Vault</a></li>
-        </div>
+        </ul>
       </div>
     </div>
   </nav>
-
   <div class="app">
-    <header>
-      <h1>Phish or Legit — Identify the phishing emails</h1>
-      <div class="score">Score: <span id="score">0</span> / <span id="max">0</span></div>
+    <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+      <h1 style="font-size: 28px; font-weight: bold; color: #a78bfa;">Phish or Legit?</h1>
+      <div style="background: rgba(139, 92, 246, 0.15); padding: 10px 16px; border-radius: 8px; color: #a78bfa;">
+        Score: <span id="score">0</span> / <span id="max">0</span>
+      </div>
     </header>
 
-    <div class="card">
-      <div class="email-stage">
-        <div class="email-view" id="emailView" aria-live="polite"></div>
+    <div class="email-stage">
+      <div class="email-view" id="emailView"></div>
 
-        <aside class="controls">
-          <div class="meta">
-            <div>
-              <div class="sender" id="sender">-</div>
-              <div class="subject" id="subject">-</div>
-            </div>
-          </div>
+      <aside class="controls">
+        <div style="margin-bottom: 16px;">
+          <div style="font-weight: 700; color: #e6eef6; margin-bottom: 8px;" id="sender">—</div>
+          <div style="color: #94a3b8; font-size: 12px; margin-bottom: 16px;" id="subject">—</div>
+        </div>
 
-          <button class="btn phish" id="btnPhish">PHISH</button>
-          <button class="btn legit" id="btnLegit">LEGIT</button>
-          <button class="btn secondary" id="btnReveal">Reveal & Explain</button>
+        <button class="game-button" id="btnPhish">PHISH</button>
+        <button class="game-button" id="btnLegit">LEGIT</button>
+        <button class="game-button" id="btnReveal">REVEAL</button>
 
-          <div class="progress" title="progress"><i id="progressBar"></i></div>
-
-          <div class="explain" id="roundInfo">Choose whether this email is phishing or legitimate. Difficulty will increase as you progress.</div>
-        </aside>
-      </div>
-
-      <footer>
-      </footer>
+        <div class="progress"><i id="progressBar"></i></div>
+        <div style="background: rgba(139, 92, 246, 0.1); padding: 12px; border-radius: 8px; color: #94a3b8; font-size: 13px;" id="roundInfo">
+          Identify whether each email is phishing or legitimate.
+        </div>
+      </aside>
     </div>
   </div>
 
-  <div class="modal" id="modal">
-    <div class="panel">
+  <!-- Modal -->
+  <div class="modal-game" id="modal">
+    <div class="modal-panel">
       <h3 id="modalTitle">Answer</h3>
       <p id="modalSummary"></p>
       <ul id="modalReasons" class="reason-list"></ul>
-      <div style="text-align:right;margin-top:12px">
-        <button class="btn secondary" id="modalClose">Continue</button>
+      <div style="text-align: right; margin-top: 20px;">
+        <button class="btn-modal" id="modalClose">Continue</button>
       </div>
     </div>
   </div>
 
   <script>
-    // Simple dataset of "emails". Each item has: id, sender, subject, content (HTML string), isPhish (boolean), reasons (array of strings)
-    // For real screenshots: replace content with '<img src="path/to/screenshot.png" style="max-width:100%">'
-
     const emails = [
-      // EASY
-      {id:1, sender:'support@paypal.com', subject:'Action required: Reset your password',
-        content:`<div><strong>PayPal</strong><p>We detected unusual activity. Please <a href="#">click here</a> to reset your password immediately to avoid account limitation.</p><p>Thank you,<br>PayPal Security Team</p></div>`,
+      {
+        id: 1,
+        sender: 'support@paypal.com',
+        subject: 'Action required: Reset your password',
+        content: `<div><strong>PayPal</strong><p>We detected unusual activity. Please <a href="#">click here</a> to reset your password immediately to avoid account limitation.</p><p>Thank you,<br>PayPal Security Team</p></div>`,
         isPhish: true,
-        reasons:["Generic salutations or urgency","Link points to unknown/shortened domain","Sender address could be spoofed (hover to check)" ]
+        reasons: ['Generic greeting with urgency', 'Vague threat of account limitation', 'Link not directly to paypal.com domain']
       },
-
-      // EASY - legit
-      {id:2, sender:'noreply@github.com', subject:'New sign-in to your GitHub account',
-        content:`<div><strong>GitHub</strong><p>We noticed a new sign-in to your account from an unrecognized device. If this was you, no action is required. If not, <a href="#">secure your account</a>.</p><p>— The GitHub Team</p></div>`,
+      {
+        id: 2,
+        sender: 'noreply@github.com',
+        subject: 'New sign-in to your GitHub account',
+        content: `<div><strong>GitHub</strong><p>We noticed a new sign-in to your account from an unrecognized device. If this was you, no action is required. If not, <a href="#">secure your account</a>.</p><p>— The GitHub Team</p></div>`,
         isPhish: false,
-        reasons:["Official sender domain","Message contains non-urgent, clear remediation path","No suspicious shortened links"]
+        reasons: ['Official sender domain', 'Non-urgent, clear remediation path', 'No pressure to act immediately']
       },
-
-      // MEDIUM
-      {id:3, sender:'accounts@apple-secure.com', subject:'Your Apple ID has a problem',
-        content:`<div><strong>Apple Support</strong><p>We were unable to verify the payment method on file. Please <a href="#">verify your billing</a> to restore services.</p><p>If you ignore this message your account may be charged incorrectly.</p></div>`,
+      {
+        id: 3,
+        sender: 'accounts@apple-secure.com',
+        subject: 'Your Apple ID has a problem',
+        content: `<div><strong>Apple Support</strong><p>We were unable to verify the payment method on file. Please <a href="#">verify your billing</a> to restore services.</p><p>If you ignore this message your account may be charged incorrectly.</p></div>`,
         isPhish: true,
-        reasons:["Sender domain resembles official but is slightly off","Threatening/pressure language","Link likely leads to credential harvesting"]
+        reasons: ['Sender domain mimics Apple but is slightly off', 'Threatening language about charges', 'Pressure to click link immediately']
       },
-
-      // MEDIUM - legit with tricky appearance
-      {id:4, sender:'billing@netflix.com', subject:'Invoice for your recently renewed subscription',
-        content:`<div><strong>Netflix</strong><p>Your subscription was successfully renewed. Amount charged: $9.99. If you have questions, visit your <a href="#">account</a>.</p></div>`,
+      {
+        id: 4,
+        sender: 'billing@netflix.com',
+        subject: 'Invoice for your recently renewed subscription',
+        content: `<div><strong>Netflix</strong><p>Your subscription was successfully renewed. Amount charged: $9.99. If you have questions, visit your <a href="#">account</a>.</p></div>`,
         isPhish: false,
-        reasons:["Sender matches official domain","No urgent request for credentials","Transaction details are specific and plausible"]
+        reasons: ['Official sender domain', 'Specific transaction amount', 'No request for sensitive information']
       },
-
-      // HARD - subtle
-      {id:5, sender:'payroll@company-pay.com', subject:'Tax documents attached — action needed',
-        content:`<div><strong>Payroll Department</strong><p>Your W-2 for this year is available. Open the attached PDF or download from: <a href="#">company-pay.com/downloads</a></p><p>If you did not request this, contact HR.</p></div>`,
+      {
+        id: 5,
+        sender: 'payroll@company-pay.com',
+        subject: 'Tax documents attached — action needed',
+        content: `<div><strong>Payroll Department</strong><p>Your W-2 for this year is available. Open the attached PDF or download from: <a href="#">company-pay.com/downloads</a></p><p>If you did not request this, contact HR.</p></div>`,
         isPhish: true,
-        reasons:["Attachment/download requests for sensitive documents","Domain in link differs from usual company domain","Social engineering angle (employee paperwork)" ]
+        reasons: ['Domain differs from main company domain', 'Requests download of sensitive tax document', 'Social engineering using employee paperwork']
       }
     ];
 
-    // Shuffle and progressively increase difficulty by ordering: easy -> medium -> hard
-    const order = [1,2,3,4,5]; // you can randomize within tiers
-    const rounds = order.map(id => emails.find(e => e.id === id));
-
-    // Game state
-    let current = 0; let score = 0;
+    const rounds = [...emails].sort(() => Math.random() - 0.5);
+    
+    let current = 0;
+    let score = 0;
     const max = rounds.length;
 
-    // Elements
     const emailView = document.getElementById('emailView');
     const senderEl = document.getElementById('sender');
     const subjectEl = document.getElementById('subject');
@@ -327,114 +471,146 @@
     const modalSummary = document.getElementById('modalSummary');
     const modalReasons = document.getElementById('modalReasons');
 
+    const btnPhish = document.getElementById('btnPhish');
+    const btnLegit = document.getElementById('btnLegit');
+    const btnReveal = document.getElementById('btnReveal');
+    const modalClose = document.getElementById('modalClose');
+
     maxEl.textContent = max;
 
-    function renderRound(){
-      const r = rounds[current];
-      // update meta and view
-      senderEl.textContent = r.sender;
-      subjectEl.textContent = r.subject;
-      emailView.innerHTML = r.content;
-      // remove previous highlights
-      unhighlightAll();
+    function renderRound() {
+      const round = rounds[current];
+      senderEl.textContent = round.sender;
+      subjectEl.textContent = round.subject;
+      emailView.innerHTML = round.content;
 
-      // update progress
-      const pct = Math.round((current/max)*100);
+      const pct = Math.round((current / max) * 100);
       progressBar.style.width = pct + '%';
-      roundInfo.textContent = `Round ${current+1} of ${max} — Difficulty: ${getDifficulty(current)}`;
 
-      // accessibility focus
-      emailView.focus && emailView.focus();
+      const difficulty = current < 2 ? 'Easy' : current < 4 ? 'Medium' : 'Hard';
+      roundInfo.innerHTML = `<strong>Round ${current + 1} of ${max}</strong> — Difficulty: <span style="color: #a78bfa;">${difficulty}</span>`;
     }
 
-    function getDifficulty(i){
-      if(i<2) return 'Easy';
-      if(i<4) return 'Medium';
-      return 'Hard';
+    function checkAnswer(isPhishGuess) {
+      const round = rounds[current];
+      const correct = round.isPhish === isPhishGuess;
+      
+      if (correct) {
+        score++;
+        scoreEl.textContent = score;
+      }
+      
+      showModal(correct, round);
+      disableButtons();
     }
 
-    function checkAnswer(isPhishGuess){
-      const r = rounds[current];
-      const correct = r.isPhish === isPhishGuess;
-      if(correct){ score += 1; scoreEl.textContent = score; showModal(true, r); }
-      else { showModal(false, r); }
-    }
+    function showModal(wasCorrect, round) {
+      modalTitle.textContent = wasCorrect ? '✓ Correct!' : '✗ Incorrect';
+      modalSummary.textContent = wasCorrect 
+        ? (round.isPhish ? 'This was a phishing email.' : 'This was legitimate.')
+        : `Correct answer: ${round.isPhish ? 'PHISHING' : 'LEGITIMATE'}`;
 
-    function showModal(wasCorrect, round){
-      modal.style.display = 'flex';
-      modalTitle.textContent = wasCorrect ? 'Correct!' : 'Incorrect — Explanation';
-      modalSummary.textContent = wasCorrect ? (round.isPhish ? 'This was a phishing email.' : 'This was legitimate.') : (`Correct answer: ${round.isPhish ? 'Phishing' : 'Legitimate'}`);
-
-      // populate reasons
       modalReasons.innerHTML = '';
-      round.reasons.forEach(r => {
-        const li = document.createElement('li'); li.textContent = r; modalReasons.appendChild(li);
+      round.reasons.forEach(reason => {
+        const li = document.createElement('li');
+        li.textContent = reason;
+        modalReasons.appendChild(li);
       });
 
-      // highlight suspicious phrases where possible (best-effort string matching)
-      if(!wasCorrect){
+      if (!wasCorrect) {
         highlightPhrases(round.reasons);
-      } else { // small green highlights for learning
-        highlightPositive(round.reasons);
+      } else {
+        highlightPositive();
       }
 
-      // move to next when modal closed
+      modal.classList.add('active');
     }
 
-    document.getElementById('modalClose').addEventListener('click', () => {
-      modal.style.display = 'none';
-      current += 1;
-      if(current >= max){ endGame(); } else { renderRound(); }
-    });
-
-    document.getElementById('btnPhish').addEventListener('click', () => checkAnswer(true));
-    document.getElementById('btnLegit').addEventListener('click', () => checkAnswer(false));
-    document.getElementById('btnReveal').addEventListener('click', () => { showModal(false, rounds[current]); });
-
-    function endGame(){
-      // simple end screen
-      emailView.innerHTML = `<div style="padding:18px"><h2>Game complete</h2><p>Your score: ${score} / ${max}</p><p>To practice more, add more examples into the <code>emails</code> array or shuffle rounds.</p></div>`;
-      senderEl.textContent = '-'; subjectEl.textContent = '-'; progressBar.style.width = '100%';
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 
-    // Utility: best-effort highlights. We'll search for short words from reasons and wrap them in <mark>
-    function highlightPhrases(reasonArray){
-      // pick keywords from reasons (words 4+ chars)
+    function highlightPhrases(reasonArray) {
       const keywords = [];
-      reasonArray.forEach(r => {
-        r.split(/[^A-Za-z0-9\-\.]/).forEach(token => {
-          if(token.length>=4) keywords.push(token);
+      reasonArray.forEach(reason => {
+        reason.split(/[^A-Za-z0-9\-\.]/).forEach(token => {
+          if (token.length >= 4) keywords.push(token);
         });
       });
-      // de-dup and sort longer first
-      const uniq = Array.from(new Set(keywords)).sort((a,b)=>b.length-a.length);
-      // perform replace in emailView innerHTML (case-insensitive)
+
+      const unique = Array.from(new Set(keywords)).sort((a, b) => b.length - a.length);
       let html = emailView.innerHTML;
-      uniq.slice(0,8).forEach(k => {
-        const re = new RegExp('('+escapeRegExp(k)+')','ig');
-        html = html.replace(re, '<mark>$1</mark>');
+
+      unique.slice(0, 8).forEach(keyword => {
+        const regex = new RegExp('(' + escapeRegExp(keyword) + ')', 'gi');
+        html = html.replace(regex, '<mark>$1</mark>');
       });
+
       emailView.innerHTML = html;
     }
 
-    function highlightPositive(reasonArray){
-      // highlight domains or words that indicate safety (naive)
-      const safeWords = ['GitHub','Netflix','transaction','renewed'];
+    function highlightPositive() {
+      const safeWords = ['GitHub', 'Netflix', 'transaction', 'renewed', 'official', 'domain'];
       let html = emailView.innerHTML;
-      safeWords.forEach(k=>{
-        const re = new RegExp('('+escapeRegExp(k)+')','ig'); html = html.replace(re, '<mark class="highlight-ok">$1</mark>');
+      
+      safeWords.forEach(word => {
+        const regex = new RegExp('(' + escapeRegExp(word) + ')', 'gi');
+        html = html.replace(regex, '<mark class="highlight-ok">$1</mark>');
       });
+
       emailView.innerHTML = html;
     }
 
-    function unhighlightAll(){
-      emailView.innerHTML = emailView.innerHTML.replace(/<mark[^>]*>(.*?)<\/mark>/ig, '$1');
+    function disableButtons() {
+      btnPhish.disabled = true;
+      btnLegit.disabled = true;
+      btnReveal.disabled = true;
     }
 
-    function escapeRegExp(string){ return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+    function enableButtons() {
+      btnPhish.disabled = false;
+      btnLegit.disabled = false;
+      btnReveal.disabled = false;
+    }
 
-    // start
+    function endGame() {
+      emailView.innerHTML = `<div style="padding: 20px; text-align: center;">
+        <h2 style="color: #a78bfa; margin-bottom: 16px;">Game Complete!</h2>
+        <p style="font-size: 18px; margin-bottom: 8px;">Your Score: <strong style="color: #34d399;">${score} / ${max}</strong></p>
+        <p style="color: #94a3b8;">Great job practicing email security! Remember these skills when checking real emails.</p>
+      </div>`;
+      
+      senderEl.textContent = '—';
+      subjectEl.textContent = '—';
+      progressBar.style.width = '100%';
+      roundInfo.innerHTML = '<strong>You completed all rounds!</strong>';
+      disableButtons();
+    }
+
+    btnPhish.addEventListener('click', () => checkAnswer(true));
+    btnLegit.addEventListener('click', () => checkAnswer(false));
+    
+    btnReveal.addEventListener('click', () => {
+      showModal(false, rounds[current]);
+      disableButtons();
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('active');
+      current++;
+      
+      if (current >= max) {
+        endGame();
+      } else {
+        enableButtons();
+        renderRound();
+      }
+    });
+
     renderRound();
+    enableButtons();
   </script>
 </body>
 </html>
+
+
