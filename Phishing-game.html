@@ -4,44 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phish or Legit — LOCK-IN Security Game</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles1.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   
   <style>
-    /* Game-specific styles only */
+    /* Minimal game-specific styles */
     .app {
       width: 90%;
       max-width: 1000px;
       margin: 120px auto 40px;
-      z-index: 10;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    h1 {
-      font-size: 28px;
-      font-weight: bold;
-      background: linear-gradient(135deg, #a78bfa, #8b5cf6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .score {
-      background: rgba(139, 92, 246, 0.15);
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      color: #a78bfa;
-      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .email-stage {
@@ -82,169 +54,27 @@
       width: 280px;
     }
 
-    .meta {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 16px;
-      flex-direction: column;
-    }
-
-    .sender {
-      font-weight: 700;
-      color: #e6eef6;
-      font-size: 14px;
-    }
-
-    .subject {
-      color: #94a3b8;
-      font-size: 12px;
-      margin-bottom: 16px;
-    }
-
-    .controls-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
     .game-button {
-      position: relative;
       width: 100%;
-      height: 3.5em;
-      outline: none;
-      transition: all 0.2s;
-      background-color: transparent;
-      border: none;
-      font-size: 12px;
-      font-weight: bold;
-      color: #ddebf0;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: rgba(139, 92, 246, 0.2);
+      border: 2px solid rgba(139, 92, 246, 0.5);
+      color: #a78bfa;
+      border-radius: 8px;
       cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .game-button #clip {
-      --color: #8b5cf6;
-      position: absolute;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      border: 4px double var(--color);
-      box-shadow: inset 0px 0px 15px rgba(139, 92, 246, 0.3);
-      clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-    }
-
-    .game-button .arrow {
-      position: absolute;
-      transition: all 0.2s;
-      background-color: #8b5cf6;
-      top: 35%;
-      width: 11%;
-      height: 30%;
-    }
-
-    .game-button #leftArrow {
-      left: -13.5%;
-      clip-path: polygon(100% 0, 100% 100%, 0 50%);
-    }
-
-    .game-button #rightArrow {
-      clip-path: polygon(100% 49%, 0 0, 0 100%);
-      left: 102%;
-    }
-
-    .game-button:hover #rightArrow {
-      background-color: #34d399;
-      left: -15%;
-      animation: 0.6s ease-in-out infinite alternate rightArrowAnim;
-    }
-
-    .game-button:hover #leftArrow {
-      background-color: #34d399;
-      left: 103%;
-      animation: 0.6s ease-in-out infinite alternate leftArrowAnim;
-    }
-
-    .game-button .corner {
-      position: absolute;
-      width: 3.5em;
-      height: 3.5em;
-      background-color: #8b5cf6;
-      box-shadow: inset 1px 1px 8px rgba(139, 92, 246, 0.5);
-      transform: scale(1) rotate(45deg);
+      font-weight: bold;
       transition: all 0.2s;
     }
 
-    .game-button #rightTop {
-      top: -1.75em;
-      left: 91%;
+    .game-button:hover:not(:disabled) {
+      background: rgba(139, 92, 246, 0.4);
+      box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
     }
 
-    .game-button #leftTop {
-      top: -1.75em;
-      left: -3.0em;
-    }
-
-    .game-button #leftBottom {
-      top: 1.85em;
-      left: -2.15em;
-    }
-
-    .game-button #rightBottom {
-      top: 45%;
-      left: 88%;
-    }
-
-    .game-button:hover #leftTop {
-      animation: 0.1s ease-in-out 0.05s both changeColor, 0.2s linear 0.4s both lightEffect;
-    }
-
-    .game-button:hover #rightTop {
-      animation: 0.1s ease-in-out 0.15s both changeColor, 0.2s linear 0.4s both lightEffect;
-    }
-
-    .game-button:hover #rightBottom {
-      animation: 0.1s ease-in-out 0.25s both changeColor, 0.2s linear 0.4s both lightEffect;
-    }
-
-    .game-button:hover #leftBottom {
-      animation: 0.1s ease-in-out 0.35s both changeColor, 0.2s linear 0.4s both lightEffect;
-    }
-
-    .game-button:hover .corner {
-      transform: scale(1.25) rotate(45deg);
-    }
-
-    .game-button:hover #clip {
-      animation: 0.2s ease-in-out 0.55s both greenLight;
-      --color: #34d399;
-    }
-
-    @keyframes changeColor {
-      from { background-color: #8b5cf6; }
-      to { background-color: #34d399; }
-    }
-
-    @keyframes lightEffect {
-      from { box-shadow: 1px 1px 5px #34d399; }
-      to { box-shadow: 0 0 2px #34d399; }
-    }
-
-    @keyframes greenLight {
-      to { box-shadow: inset 0px 0px 32px rgba(52, 211, 153, 0.5); }
-    }
-
-    @keyframes leftArrowAnim {
-      from { transform: translateX(0px); }
-      to { transform: translateX(10px); }
-    }
-
-    @keyframes rightArrowAnim {
-      from { transform: translateX(0px); }
-      to { transform: translateX(-10px); }
+    .game-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
     .progress {
@@ -264,17 +94,6 @@
       transition: width 0.3s ease;
     }
 
-    .explain {
-      background: rgba(139, 92, 246, 0.1);
-      padding: 12px;
-      border-radius: 8px;
-      color: #94a3b8;
-      margin-top: 12px;
-      font-size: 13px;
-      border: 1px solid rgba(139, 92, 246, 0.2);
-    }
-
-    /* Modal */
     .modal-game {
       position: fixed;
       inset: 0;
@@ -303,7 +122,6 @@
     .modal-panel h3 {
       color: #a78bfa;
       margin-bottom: 12px;
-      font-size: 20px;
     }
 
     .modal-panel p {
@@ -311,21 +129,9 @@
       margin-bottom: 12px;
     }
 
-    .reason-list {
-      margin: 12px 0;
-      padding-left: 24px;
-      list-style-position: inside;
-    }
-
     .reason-list li {
       color: #b0b0b0;
       margin-bottom: 8px;
-      font-size: 14px;
-    }
-
-    .modal-footer {
-      text-align: right;
-      margin-top: 20px;
     }
 
     .btn-modal {
@@ -355,89 +161,32 @@
   </style>
 </head>
 <body>
-  <!-- Background Video -->
-  <video autoplay muted loop id="bg-video">
-    <source src="background.mp4" type="video/mp4">
-  </video>
-  <div class="overlay"></div>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="index.html">LOCK-IN</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="courses.html">Learning Hub</a></li>
-          <li class="nav-item"><a class="nav-link active" href="games.html">Games</a></li>
-          <li class="nav-item"><a class="nav-link" href="directory.html">Directory</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main Game -->
   <div class="app">
-    <header>
-      <h1>Phish or Legit?</h1>
-      <div class="score">Score: <span id="score">0</span> / <span id="max">0</span></div>
+    <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+      <h1 style="font-size: 28px; font-weight: bold; color: #a78bfa;">Phish or Legit?</h1>
+      <div style="background: rgba(139, 92, 246, 0.15); padding: 10px 16px; border-radius: 8px; color: #a78bfa;">
+        Score: <span id="score">0</span> / <span id="max">0</span>
+      </div>
     </header>
 
-    <div class="card-cyber">
-      <div class="email-stage">
-        <div class="email-view" id="emailView" role="main" aria-live="polite"></div>
+    <div class="email-stage">
+      <div class="email-view" id="emailView"></div>
 
-        <aside class="controls">
-          <div class="meta">
-            <div class="sender" id="sender">—</div>
-            <div class="subject" id="subject">—</div>
-          </div>
+      <aside class="controls">
+        <div style="margin-bottom: 16px;">
+          <div style="font-weight: 700; color: #e6eef6; margin-bottom: 8px;" id="sender">—</div>
+          <div style="color: #94a3b8; font-size: 12px; margin-bottom: 16px;" id="subject">—</div>
+        </div>
 
-          <div class="controls-buttons">
-            <button class="game-button" id="btnPhish">
-              PHISH
-              <div id="clip">
-                <div id="leftTop" class="corner"></div>
-                <div id="rightBottom" class="corner"></div>
-                <div id="rightTop" class="corner"></div>
-                <div id="leftBottom" class="corner"></div>
-              </div>
-              <span id="rightArrow" class="arrow"></span>
-              <span id="leftArrow" class="arrow"></span>
-            </button>
+        <button class="game-button" id="btnPhish">PHISH</button>
+        <button class="game-button" id="btnLegit">LEGIT</button>
+        <button class="game-button" id="btnReveal">REVEAL</button>
 
-            <button class="game-button" id="btnLegit">
-              LEGIT
-              <div id="clip">
-                <div id="leftTop" class="corner"></div>
-                <div id="rightBottom" class="corner"></div>
-                <div id="rightTop" class="corner"></div>
-                <div id="leftBottom" class="corner"></div>
-              </div>
-              <span id="rightArrow" class="arrow"></span>
-              <span id="leftArrow" class="arrow"></span>
-            </button>
-
-            <button class="game-button" id="btnReveal">
-              REVEAL
-              <div id="clip">
-                <div id="leftTop" class="corner"></div>
-                <div id="rightBottom" class="corner"></div>
-                <div id="rightTop" class="corner"></div>
-                <div id="leftBottom" class="corner"></div>
-              </div>
-              <span id="rightArrow" class="arrow"></span>
-              <span id="leftArrow" class="arrow"></span>
-            </button>
-          </div>
-
-          <div class="progress"><i id="progressBar"></i></div>
-          <div class="explain" id="roundInfo">Identify whether each email is phishing or legitimate. Difficulty increases as you progress.</div>
-        </aside>
-      </div>
+        <div class="progress"><i id="progressBar"></i></div>
+        <div style="background: rgba(139, 92, 246, 0.1); padding: 12px; border-radius: 8px; color: #94a3b8; font-size: 13px;" id="roundInfo">
+          Identify whether each email is phishing or legitimate.
+        </div>
+      </aside>
     </div>
   </div>
 
@@ -447,19 +196,14 @@
       <h3 id="modalTitle">Answer</h3>
       <p id="modalSummary"></p>
       <ul id="modalReasons" class="reason-list"></ul>
-      <div class="modal-footer">
+      <div style="text-align: right; margin-top: 20px;">
         <button class="btn-modal" id="modalClose">Continue</button>
       </div>
     </div>
   </div>
 
   <script>
-    // ============================================
-    // PHISH OR LEGIT GAME - INTERACTIVE
-    // ============================================
-
     const emails = [
-      // EASY
       {
         id: 1,
         sender: 'support@paypal.com',
@@ -476,8 +220,6 @@
         isPhish: false,
         reasons: ['Official sender domain', 'Non-urgent, clear remediation path', 'No pressure to act immediately']
       },
-
-      // MEDIUM
       {
         id: 3,
         sender: 'accounts@apple-secure.com',
@@ -494,8 +236,6 @@
         isPhish: false,
         reasons: ['Official sender domain', 'Specific transaction amount', 'No request for sensitive information']
       },
-
-      // HARD
       {
         id: 5,
         sender: 'payroll@company-pay.com',
@@ -506,14 +246,12 @@
       }
     ];
 
-    // Shuffle while maintaining difficulty progression
     const rounds = [...emails].sort(() => Math.random() - 0.5);
     
     let current = 0;
     let score = 0;
     const max = rounds.length;
 
-    // DOM Elements
     const emailView = document.getElementById('emailView');
     const senderEl = document.getElementById('sender');
     const subjectEl = document.getElementById('subject');
@@ -526,7 +264,6 @@
     const modalSummary = document.getElementById('modalSummary');
     const modalReasons = document.getElementById('modalReasons');
 
-    // Buttons
     const btnPhish = document.getElementById('btnPhish');
     const btnLegit = document.getElementById('btnLegit');
     const btnReveal = document.getElementById('btnReveal');
@@ -534,28 +271,17 @@
 
     maxEl.textContent = max;
 
-    // ============================================
-    // GAME FUNCTIONS
-    // ============================================
-
     function renderRound() {
       const round = rounds[current];
       senderEl.textContent = round.sender;
       subjectEl.textContent = round.subject;
       emailView.innerHTML = round.content;
-      unhighlightAll();
 
       const pct = Math.round((current / max) * 100);
       progressBar.style.width = pct + '%';
 
-      const difficulty = getDifficulty(current);
+      const difficulty = current < 2 ? 'Easy' : current < 4 ? 'Medium' : 'Hard';
       roundInfo.innerHTML = `<strong>Round ${current + 1} of ${max}</strong> — Difficulty: <span style="color: #a78bfa;">${difficulty}</span>`;
-    }
-
-    function getDifficulty(index) {
-      if (index < 2) return 'Easy';
-      if (index < 4) return 'Medium';
-      return 'Hard';
     }
 
     function checkAnswer(isPhishGuess) {
@@ -593,6 +319,10 @@
       modal.classList.add('active');
     }
 
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
     function highlightPhrases(reasonArray) {
       const keywords = [];
       reasonArray.forEach(reason => {
@@ -624,16 +354,6 @@
       emailView.innerHTML = html;
     }
 
-    function unhighlightAll() {
-      emailView.innerHTML = emailView.innerHTML.replace(/<mark[^>]*>(.*?)<\/mark>/gi, '$1');
-    }
-
-    function escapeRegExp(string) {
-      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\  <script src="js/phish-game.js"></script>
-</body>
-</html>');
-    }
-
     function disableButtons() {
       btnPhish.disabled = true;
       btnLegit.disabled = true;
@@ -660,10 +380,6 @@
       disableButtons();
     }
 
-    // ============================================
-    // EVENT LISTENERS
-    // ============================================
-
     btnPhish.addEventListener('click', () => checkAnswer(true));
     btnLegit.addEventListener('click', () => checkAnswer(false));
     
@@ -684,14 +400,8 @@
       }
     });
 
-    // ============================================
-    // INITIALIZE GAME
-    // ============================================
-
     renderRound();
     enableButtons();
   </script>
 </body>
 </html>
-     
-
