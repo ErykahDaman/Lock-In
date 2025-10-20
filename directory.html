@@ -3,31 +3,379 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOCK-IN | Dashboard</title>
-  <link rel="stylesheet" href="styles1.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+  <title>LOCK-IN | Cybersecurity Directory</title>
 
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  
+  <style>
+    .resource-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      height: 100%;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+      border-color: rgba(139, 92, 246, 0.6);
+    }
+    
+    .resource-icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+      display: block;
+    }
+    
+    .resource-card h5 {
+      color: #a78bfa;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .resource-card p {
+      color: #94a3b8;
+      font-size: 13px;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    
+    .resource-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .section-title {
+      background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
 <body>
-    <!-- Navbar -->
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="assets/bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold text-success" href="#">LOCK-IN</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand fw-bold" href="index.html">LOCK-IN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="institute.html">Cyber Institute</a></li>
-          <li class="nav-item"><a class="nav-link" href="games.html">Game Room</a></li>
-          <li class="nav-item"><a class="nav-link active" href="directory.html">Info Vault</a></li>
-        </div>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Learning Hub</a></li>
+          <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
+          <li class="nav-item"><a class="nav-link active" href="directory.html">Directory</a></li>
+        </ul>
       </div>
     </div>
   </nav>
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Header -->
+  <header class="text-center text-light py-5" style="margin-top: 80px;">
+    <div class="container">
+      <h1 class="fw-bold section-title">Cybersecurity Directory</h1>
+      <p class="lead">Emergency helplines, fraud reporting, and curated learning resources</p>
+    </div>
+  </header>
+
+  <!-- Helplines Section -->
+  <section class="container my-5">
+    <h2 class="section-title text-center mb-4">🆘 Emergency & Helplines (Botswana)</h2>
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <div class="card-cyber p-4">
+          <h5 class="mb-3" style="color: #34d399;">🏦 Bank Helplines</h5>
+          <ul class="list-unstyled" style="line-height: 2;">
+            <li><b>First National Bank (FNB):</b> +267 364 2000</li>
+            <li><b>Absa Bank Botswana:</b> +267 395 9881</li>
+            <li><b>Stanbic Bank:</b> +267 361 8000</li>
+            <li><b>Standard Chartered Bank:</b> +267 361 5800</li>
+            <li><b>BancABC:</b> +267 367 1600</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card-cyber p-4">
+          <h5 class="mb-3" style="color: #fb7185;">🚨 Report Scams & Fraud</h5>
+          <ul class="list-unstyled" style="line-height: 2;">
+            <li><b>Cyber Crime Unit (Police):</b> +267 391 5929</li>
+            <li><b>Financial Intelligence Agency:</b> +267 398 8352</li>
+            <li><b>BOCRA:</b> +267 395 7755</li>
+            <li><b>Consumer Protection Unit:</b> +267 360 1200</li>
+            <li><b>Fraud Hotline (Anonymous):</b> 0800 600 018</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books Section -->
+  <section class="container my-5">
+    <h2 class="section-title text-center">📚 Recommended Cybersecurity Books</h2>
+    <div class="row g-4">
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.amazon.com/Art-Invisibility-Worlds-Teaches-Brother/dp/0316380504" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📘</span>
+            <h5>The Art of Invisibility</h5>
+            <p>by Kevin Mitnick - Learn privacy techniques from a legendary hacker</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.amazon.com/Ghost-Wires-Adventures-Worlds-Wanted/dp/0316037729" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📕</span>
+            <h5>Ghost in the Wires</h5>
+            <p>by Kevin Mitnick - Thrilling memoir from the world's most wanted hacker</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.amazon.com/Cybersecurity-Cyberwar-Everyone-Needs-Know/dp/0199918112" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📗</span>
+            <h5>Cybersecurity and Cyberwar</h5>
+            <p>by P.W. Singer - Everything about digital security threats</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.amazon.com/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📙</span>
+            <h5>Hacking: Art of Exploitation</h5>
+            <p>by Jon Erickson - Deep dive into hacking techniques and defense</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.amazon.com/Social-Engineering-Art-Human-Hacking/dp/0470639539" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📔</span>
+            <h5>Social Engineering</h5>
+            <p>by Christopher Hadnagy - Psychological manipulation in cybersecurity</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.amazon.com/Permanent-Record-Edward-Snowden/dp/1250237238" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📒</span>
+            <h5>Permanent Record</h5>
+            <p>by Edward Snowden - NSA whistleblower's story about surveillance</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.amazon.com/Countdown-Zero-Day-Stuxnet-Digital/dp/0770436196" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📓</span>
+            <h5>Countdown to Zero Day</h5>
+            <p>by Kim Zetter - Stuxnet worm and the world's first digital weapon</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.amazon.com/Future-Crimes-Digital-Connects-Unprotected/dp/0804171459" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📖</span>
+            <h5>Future Crimes</h5>
+            <p>by Marc Goodman - Emerging digital threats and protection</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audiobooks Section -->
+  <section class="container my-5">
+    <h2 class="section-title text-center">🎧 Cybersecurity Audiobooks</h2>
+    <div class="row g-4">
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.audible.com/pd/The-Phoenix-Project-Audiobook/B00VATFAMI" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">🎧</span>
+            <h5>The Phoenix Project</h5>
+            <p>IT operations and security through an engaging story</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.audible.com/pd/Permanent-Record-Audiobook/1250237238" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">🎙️</span>
+            <h5>Permanent Record</h5>
+            <p>Edward Snowden reads his own story about surveillance</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.audible.com/pd/Countdown-to-Zero-Day-Audiobook/B00OEBZMFA" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">🎵</span>
+            <h5>Countdown to Zero Day</h5>
+            <p>Stuxnet worm investigation narrated compellingly</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.audible.com/pd/Dark-Territory-Audiobook/B01BTSZV86" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">🔊</span>
+            <h5>Dark Territory</h5>
+            <p>Secret history of cyber warfare revealed</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.audible.com/pd/Future-Crimes-Audiobook/B00U8YFIZ0" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">🎶</span>
+            <h5>Future Crimes</h5>
+            <p>Digital threats and self-protection strategies</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.audible.com/pd/Ghost-in-the-Wires-Audiobook/B005GYZIW0" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">🎤</span>
+            <h5>Ghost in the Wires</h5>
+            <p>Kevin Mitnick's thrilling hacking adventures</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Videos Section -->
+  <section class="container my-5">
+    <h2 class="section-title text-center">▶️ Top Cybersecurity YouTube Channels</h2>
+    <div class="row g-4">
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.youtube.com/watch?v=U_P23SqJaDc" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">▶️</span>
+            <h5>Cybersecurity Basics</h5>
+            <p>Professor Messer - Complete fundamentals guide</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.youtube.com/watch?v=hqF0ozgVT7g" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">🎬</span>
+            <h5>How Hackers Hack</h5>
+            <p>NetworkChuck - Understanding hacking methods</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.youtube.com/watch?v=3NjQ9b3pgIg" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">🎥</span>
+            <h5>Password Security</h5>
+            <p>Computerphile - Creating secure passwords</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.youtube.com/watch?v=lc7scxvKQOo" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📹</span>
+            <h5>Social Engineering</h5>
+            <p>Hak5 - How attackers manipulate people</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.youtube.com/watch?v=3Kq1MIfTWCE" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">🎞️</span>
+            <h5>Ethical Hacking Course</h5>
+            <p>freeCodeCamp - Full tutorial for beginners</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.youtube.com/@LiveOverflow" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📺</span>
+            <h5>LiveOverflow Channel</h5>
+            <p>Binary exploitation and hacking tutorials</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.youtube.com/@johnhammond010" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">🎦</span>
+            <h5>John Hammond</h5>
+            <p>CTF walkthroughs and security content</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col-md-4 col-lg-3">
+        <a href="https://www.youtube.com/@NetworkChuck" target="_blank">
+          <div class="resource-card">
+            <span class="resource-icon">📽️</span>
+            <h5>NetworkChuck</h5>
+            <p>Networking and cybersecurity tutorials</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-light py-4 mt-5" style="background: rgba(5, 10, 20, 0.8);">
+    <p class="mb-0">© 2025 LOCK-IN | Built for Cybersecurity Awareness</p>
+  </footer>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="CxzKQFOyqbcsSPkhzE9_1";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
