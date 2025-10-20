@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Firewall Race — Allow or Refuse Traffic</title>
+  <link rel="stylesheet" href="styles1.css>"
   <style>
     :root{--bg:#071125;--panel:#0b1730;--muted:#9fb0c9;--good:#16a34a;--bad:#ef4444;--accent:#0284c7}
     body{font-family: Inter, system-ui, Segoe UI, Arial; margin: 0; background: linear-gradient(180deg,#001220,#07162a); color: #e6eef6; min-height: 100vh; display: flex; flex-direction: column; align-items: center;}
@@ -50,6 +51,11 @@
   rel="stylesheet"/>
 </head>
 <body>
+  <video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay"></div>
   <div class="app">
       <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
@@ -198,3 +204,4 @@
   </script>
 </body>
 </html>
+
